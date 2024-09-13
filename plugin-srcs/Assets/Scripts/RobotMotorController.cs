@@ -10,6 +10,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
 {
     public class RobotMotorController : MonoBehaviour, IRobotPartsController, IRobotPartsConfig
     {
+        public GameObject realRobot;
         private GameObject root;
         private string root_name;
         private PduIoConnector pdu_io;
@@ -59,6 +60,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
         public double delta_angle = 0.1;
         private void Update()
         {
+            robotRotateAndPostionSync();
             RobotControllerNoObstacle();
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
@@ -114,7 +116,17 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
         {
             goalPoint = goalList[goalListCount];
             heading = goalPoint.position - this.transform.position;
+            rotateIsOn = true;
         }
+        public void robotRotateAndPostionSync()
+        {
+            //this.transform.localPosition = realRobot.transform.localPosition;
+            this.transform.position = realRobot.transform.position + new Vector3(0, 0, 1);
+            this.transform.localRotation = realRobot.transform.localRotation;
+            this.transform.Rotate(0, -90, 0);
+        }
+        private bool rotateIsOn;
+        private bool runningIsOn;
         public void RobotControllerNoObstacle()
         {
             Ray ray = new Ray(transform.position, this.transform.forward);
@@ -128,7 +140,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
                     Vector3 RobotFoward = this.transform.forward;
                     heading = goalPoint.position - this.transform.position;
                     Vector3 diffRotaion = heading.normalized - RobotFoward;
-                    if (Mathf.Abs(diffRotaion.x) < 0.004f)
+                    if (Mathf.Abs(diffRotaion.x) < 1.404f)
                     {
                         canMoveRobot = true;
                     }
@@ -140,6 +152,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
                 //this.transform.Rotate(0, 0, 0);
                 this.target_velocity = 0;
                 this.target_rotation_angle_rate = 0;
+                runningIsOn = true;
                 MoveRobotFoward();
             }
             else
@@ -148,14 +161,19 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
                 //if (Mathf.Abs(diffRotaion.x) > 0.1f)
                 if (!canMoveRobot)
                 {
-                    this.transform.Rotate(0, 0.1f, 0);
-                    this.target_rotation_angle_rate = 0.1;
+                    //this.transform.Rotate(0, 0.1f, 0);
+                    if (rotateIsOn)
+                    {
+                        Debug.Log("rotateIsOn");
+                        this.target_rotation_angle_rate += delta_angle;
+                        rotateIsOn = false;
+                    }
                 }
                 else
                 {
                     //Debug.Log(diffRotaion.x);
                     //Debug.Log(diffRotaion.z);
-                    this.transform.Rotate(0, 0, 0);
+                    //this.transform.Rotate(0, 0, 0);
                     this.target_rotation_angle_rate = 0;
                     canMoveRobot = true;
                 }
@@ -165,7 +183,11 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
         {
             //this.transform.position += this.transform.forward * 0.01f;
             //this.transform.position += this.transform.forward * (float)delta_vel;
-            this.target_velocity += delta_vel;
+            if (runningIsOn)
+            {
+                this.target_velocity += delta_vel;
+                runningIsOn = false;
+            }
             float dis = Vector3.Distance(goalPoint.position, this.transform.position);
             //Debug.Log(Mathf.Abs(dis));
             if (Mathf.Abs(dis) < 1.6f)
@@ -181,6 +203,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
                     goalPoint = null;
                 }
                 canMoveRobot = false;
+                rotateIsOn = true;
                 isObstacleState = false;
             }
         }

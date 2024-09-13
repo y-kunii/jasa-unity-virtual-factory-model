@@ -10,5 +10,11 @@
       "SampleRobot_cmd_velPdu"
     ],
     "core_class_name": null
+  },
+  {
+    "name": "SampleRobotTestDriver",
+    "pdu_writer_names": [],
+    "pdu_reader_names": [],
+    "core_class_name": null
   }
 ]

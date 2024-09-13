@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &275888395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9150766543659315553, guid: 997d63cca9a09b2489523a4e5c332f0e, type: 3}
+  m_PrefabInstance: {fileID: 1427314818}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &493222380
 GameObject:
   m_ObjectHideFlags: 0
@@ -251,7 +256,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 6.11, y: 0.5, z: -3.75}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 5, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1756,13 +1761,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1776813268}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 7.5, y: 0.32699996, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1001351540}
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1776813270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1846,6 +1851,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 901bfc4e9f60d4c4caf3de53a2ec9ab9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  realRobot: {fileID: 275888395}
   update_cycle: 10
   topic_name: cmd_vel
   roboname: SampleRobot

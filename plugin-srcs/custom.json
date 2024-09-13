@@ -52,6 +52,13 @@
           "method_type": "SHM"
         }
       ]
+    },
+    {
+      "name": "SampleRobotTestDriver",
+      "rpc_pdu_readers": [],
+      "rpc_pdu_writers": [],
+      "shm_pdu_readers": [],
+      "shm_pdu_writers": []
     }
   ]
 }

@@ -5,8 +5,22 @@
       "robotype": "SampleRobot",
       "pos": {
         "X": 0.0,
-        "Y": 0.59,
+        "Y": 1.29,
+        "Z": -13.2
+      },
+      "angle": {
+        "X": 0.0,
+        "Y": 0.0,
         "Z": 0.0
+      }
+    },
+    {
+      "roboname": "SampleRobotTestDriver",
+      "robotype": "SampleRobotTestDriver",
+      "pos": {
+        "X": -7.5,
+        "Y": 0.7,
+        "Z": -13.2
       },
       "angle": {
         "X": 0.0,
