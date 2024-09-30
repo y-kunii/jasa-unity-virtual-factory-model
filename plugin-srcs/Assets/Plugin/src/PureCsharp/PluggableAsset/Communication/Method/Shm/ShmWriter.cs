@@ -62,11 +62,11 @@ namespace Hakoniwa.PluggableAsset.Communication.Method.Shm
             SimpleLogger.Get().Log(Level.INFO, "channel_id=" + this.shm_config.channel_id);
             SimpleLogger.Get().Log(Level.INFO, "io_size=" + this.shm_config.io_size);
             bool ret = HakoCppWrapper.asset_create_pdu_lchannel(this.shm_config.asset_name, this.shm_config.channel_id, (uint)shm_config.io_size);
-            if (ret == false)
-            {
-                Marshal.FreeHGlobal(this.buffer);
-                throw new ArgumentException("Can not create pdu channel!! channel_id=" + this.shm_config.channel_id);
-            }
+            //if (ret == false)
+            //{
+            //    Marshal.FreeHGlobal(this.buffer);
+            //    throw new ArgumentException("Can not create pdu channel!! channel_id=" + this.shm_config.channel_id);
+            //}
         }
         public void Dispose()
         {

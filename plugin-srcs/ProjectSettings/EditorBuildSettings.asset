@@ -5,7 +5,10 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Work.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
+    guid: be9e267426f4874438a8c53a03d8a87e
+  - enabled: 1
+    path: Assets/Scenes/WorkForTestVitualFactoryScene.unity
+    guid: bc67d2b5211e632428d52c2fba31880e
   m_configObjects: {}

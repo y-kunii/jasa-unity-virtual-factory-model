@@ -693,8 +693,8 @@ namespace Hakoniwa.PluggableAsset
                     {
                         var real_method = new ShmWriter();
                         real_method.Initialize(config);
-                        real_method.Name = method.method_name;
-                        AssetConfigLoader.io_writers.Add(real_method);
+                        //real_method.Name = method.method_name;
+                        //AssetConfigLoader.io_writers.Add(real_method);
                     }
                 }
             }

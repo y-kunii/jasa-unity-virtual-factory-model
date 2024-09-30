@@ -3,5 +3,15 @@
     "name": "custom_reader_connector_0",
     "pdu_name": "SampleRobot_cmd_velPdu",
     "method_name": null
+  },
+  {
+    "name": "custom_reader_connector_1",
+    "pdu_name": "Camera_pose_dataPdu",
+    "method_name": null
+  },
+  {
+    "name": "custom_reader_connector_2",
+    "pdu_name": "Button_button_sensorPdu",
+    "method_name": null
   }
 ]

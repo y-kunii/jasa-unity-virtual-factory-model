@@ -1,6 +1,13 @@
 {
   "robots": [
     {
+      "name": "SampleRobotTestDriver",
+      "rpc_pdu_readers": [],
+      "rpc_pdu_writers": [],
+      "shm_pdu_readers": [],
+      "shm_pdu_writers": []
+    },
+    {
       "name": "SampleRobot",
       "rpc_pdu_readers": [],
       "rpc_pdu_writers": [],
@@ -54,10 +61,41 @@
       ]
     },
     {
-      "name": "SampleRobotTestDriver",
+      "name": "Camera",
       "rpc_pdu_readers": [],
       "rpc_pdu_writers": [],
-      "shm_pdu_readers": [],
+      "shm_pdu_readers": [
+        {
+          "type": "geometry_msgs/Pose",
+          "org_name": "pose_data",
+          "name": "Camera_pose_data",
+          "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
+          "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter",
+          "channel_id": 0,
+          "pdu_size": 72,
+          "write_cycle": 10,
+          "method_type": "SHM"
+        }
+      ],
+      "shm_pdu_writers": []
+    },
+    {
+      "name": "Button",
+      "rpc_pdu_readers": [],
+      "rpc_pdu_writers": [],
+      "shm_pdu_readers": [
+        {
+          "type": "std_msgs/Bool",
+          "org_name": "button_sensor",
+          "name": "Button_button_sensor",
+          "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
+          "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter",
+          "channel_id": 0,
+          "pdu_size": 72,
+          "write_cycle": 10,
+          "method_type": "SHM"
+        }
+      ],
       "shm_pdu_writers": []
     }
   ]

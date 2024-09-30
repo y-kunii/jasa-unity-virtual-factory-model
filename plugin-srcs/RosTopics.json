@@ -1,5 +1,5 @@
 {
-  "robot_num": 2,
+  "robot_num": 4,
   "ros_robot_num": 0,
   "hakoenv_num": 0,
   "fields": [
@@ -40,6 +40,20 @@
       "topic_message_name": "SampleRobot_cmd_vel",
       "topic_type_name": "geometry_msgs/Twist",
       "robot_name": "SampleRobot",
+      "sub": true,
+      "pub_option": null
+    },
+    {
+      "topic_message_name": "Camera_pose_data",
+      "topic_type_name": "geometry_msgs/Pose",
+      "robot_name": "Camera",
+      "sub": true,
+      "pub_option": null
+    },
+    {
+      "topic_message_name": "Button_button_sensor",
+      "topic_type_name": "std_msgs/Bool",
+      "robot_name": "Button",
       "sub": true,
       "pub_option": null
     }

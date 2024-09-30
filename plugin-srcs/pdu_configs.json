@@ -40,6 +40,16 @@
     "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
   },
   {
+    "pdu_type_name": "geometry_msgs/Pose",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
+  },
+  {
+    "pdu_type_name": "Pose",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
+  },
+  {
     "pdu_type_name": "time",
     "fields": null,
     "pdu_data_field_path": "./ros_types/json/builtin_interfaces/Time.json"
