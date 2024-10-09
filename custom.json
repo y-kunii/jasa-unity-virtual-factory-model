@@ -1,13 +1,6 @@
 {
   "robots": [
     {
-      "name": "SampleRobotTestDriver",
-      "rpc_pdu_readers": [],
-      "rpc_pdu_writers": [],
-      "shm_pdu_readers": [],
-      "shm_pdu_writers": []
-    },
-    {
       "name": "SampleRobot",
       "rpc_pdu_readers": [],
       "rpc_pdu_writers": [],
@@ -96,6 +89,13 @@
           "method_type": "SHM"
         }
       ],
+      "shm_pdu_writers": []
+    },
+    {
+      "name": "SampleRobotController",
+      "rpc_pdu_readers": [],
+      "rpc_pdu_writers": [],
+      "shm_pdu_readers": [],
       "shm_pdu_writers": []
     }
   ]

@@ -61,18 +61,18 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
                 {
                     throw new ArgumentException("can not found pdu_reader:" + pdu_reader_name);
                 }
-                this.motors[(int)MotorType.MotorType_Left] = this.transform.Find("Interface-L").GetComponentInChildren<IRobotPartsMotor>();
-                this.motors[(int)MotorType.MotorType_Right] = this.transform.Find("Interface-R").GetComponentInChildren<IRobotPartsMotor>();
-                Debug.Log("motor left=" + this.motors[(int)MotorType.MotorType_Left]);
-                Debug.Log("motor right=" + this.motors[(int)MotorType.MotorType_Right]);
+                //this.motors[(int)MotorType.MotorType_Left] = this.transform.Find("Interface-L").GetComponentInChildren<IRobotPartsMotor>();
+                //this.motors[(int)MotorType.MotorType_Right] = this.transform.Find("Interface-R").GetComponentInChildren<IRobotPartsMotor>();
+                //Debug.Log("motor left=" + this.motors[(int)MotorType.MotorType_Left]);
+                //Debug.Log("motor right=" + this.motors[(int)MotorType.MotorType_Right]);
             }
-            for (int i = 0; i < this.motors.Length; i++)
-            {
-                if (this.motors[i] != null)
-                {
-                    this.motors[i].Initialize(root);
-                }
-            }
+            //for (int i = 0; i < this.motors.Length; i++)
+            //{
+            //    if (this.motors[i] != null)
+            //    {
+            //        this.motors[i].Initialize(root);
+            //    }
+            //}
             this.count = 0;
         }
 

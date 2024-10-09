@@ -96,7 +96,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
                 return;
             }
             this.count = 0;
-            //Debug.Log("target_velocity=" + target_velocity);
+            Debug.Log("BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" + target_velocity);
             this.pdu_reader.GetWriteOps().Ref("linear").SetData("x", target_velocity * DifferentialMotorController.motorFowardForceScale);
             this.pdu_reader.GetWriteOps().Ref("angular").SetData("z", target_rotation_angle_rate * DifferentialMotorController.motorRotateForceScale);
         }

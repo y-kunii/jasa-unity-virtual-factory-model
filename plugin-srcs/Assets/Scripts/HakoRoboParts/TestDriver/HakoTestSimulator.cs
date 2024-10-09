@@ -13,11 +13,14 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
         {
             string configPath = "./core_config.json";
             AssetConfigLoader.Load(configPath);
+            //Debug.Log("aaa");
+            //Debug.Log("ZZZZ" + AssetConfigLoader.Load(configPath));
 
             Debug.Log("childcount=" + this.transform.childCount);
             for (int i = 0; i < this.transform.childCount; i++)
             {
                 Transform child = this.transform.GetChild(i);
+                Debug.Log(i);
                 Debug.Log(child.name);
                 var ctrl = child.GetComponentInChildren<IInsideAssetController>();
                 ctrl.Initialize();

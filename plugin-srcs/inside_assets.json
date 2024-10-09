@@ -1,11 +1,5 @@
 [
   {
-    "name": "SampleRobotTestDriver",
-    "pdu_writer_names": [],
-    "pdu_reader_names": [],
-    "core_class_name": null
-  },
-  {
     "name": "SampleRobot",
     "pdu_writer_names": [
       "SampleRobot_touch_sensorPdu",
@@ -31,6 +25,12 @@
     "pdu_reader_names": [
       "Button_button_sensorPdu"
     ],
+    "core_class_name": null
+  },
+  {
+    "name": "SampleRobotController",
+    "pdu_writer_names": [],
+    "pdu_reader_names": [],
     "core_class_name": null
   }
 ]

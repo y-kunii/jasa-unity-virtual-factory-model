@@ -200,7 +200,8 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3669976837690190400, guid: da3307e18bf064b0abe006f975e212c7, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2104,7 +2105,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1044939642500599485, guid: 3deffdb3a3d9b4846b6cd0a79b389c89, type: 3}
       propertyPath: m_Name
-      value: SampleRobotTestDriver
+      value: SampleRobotController
       objectReference: {fileID: 0}
     - target: {fileID: 1044939642500599486, guid: 3deffdb3a3d9b4846b6cd0a79b389c89, type: 3}
       propertyPath: m_RootOrder
@@ -2166,7 +2167,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 1044939642500599486, guid: 3deffdb3a3d9b4846b6cd0a79b389c89, type: 3}
-      insertIndex: -1
+      insertIndex: 0
       addedObject: {fileID: 1776813269}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3deffdb3a3d9b4846b6cd0a79b389c89, type: 3}

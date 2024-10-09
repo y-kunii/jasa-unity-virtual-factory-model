@@ -35,6 +35,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
         }
         public void Initialize(System.Object obj)
         {
+            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             GameObject tmp = null;
             try
             {
@@ -61,21 +62,25 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
                 {
                     throw new ArgumentException("can not found pdu_reader:" + pdu_reader_name);
                 }
-                this.motors[(int)MotorType.MotorType_Left] = this.transform.Find("Interface-L").GetComponentInChildren<IRobotPartsMotor>();
-                this.motors[(int)MotorType.MotorType_Right] = this.transform.Find("Interface-R").GetComponentInChildren<IRobotPartsMotor>();
-                Debug.Log("motor left=" + this.motors[(int)MotorType.MotorType_Left]);
-                Debug.Log("motor right=" + this.motors[(int)MotorType.MotorType_Right]);
+                //this.motors[(int)MotorType.MotorType_Left] = this.transform.Find("Interface-L").GetComponentInChildren<IRobotPartsMotor>();
+                //this.motors[(int)MotorType.MotorType_Right] = this.transform.Find("Interface-R").GetComponentInChildren<IRobotPartsMotor>();
+                //Debug.Log("motor left=" + this.motors[(int)MotorType.MotorType_Left]);
+                //Debug.Log("motor right=" + this.motors[(int)MotorType.MotorType_Right]);
             }
-            for (int i = 0; i < this.motors.Length; i++)
-            {
-                if (this.motors[i] != null)
-                {
-                    this.motors[i].Initialize(root);
-                }
-            }
+            //for (int i = 0; i < this.motors.Length; i++)
+            //{
+            //    if (this.motors[i] != null)
+            //    {
+            //        this.motors[i].Initialize(root);
+            //    }
+            //}
             this.count = 0;
         }
-
+        //private void Update()
+        //{
+        //    Debug.Log("!!!!!!!!!!!!!!!!!");
+        //    DoControl();
+        //}
         public static float motorFowardForceScale = 1.0f;
         public static float motorRotateForceScale = 10.0f;
         public void DoControl()
@@ -89,22 +94,26 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             double target_velocity;
             double target_rotation_angle_rate;
 
-            target_velocity = this.pdu_reader.GetReadOps().Ref("linear").GetDataFloat64("x") * motorFowardForceScale;
-            target_rotation_angle_rate = this.pdu_reader.GetReadOps().Ref("angular").GetDataFloat64("z") * motorRotateForceScale;
+            //target_velocity = this.pdu_reader.GetReadOps().Ref("linear").GetDataFloat64("x") * motorFowardForceScale;
+            //target_rotation_angle_rate = this.pdu_reader.GetReadOps().Ref("angular").GetDataFloat64("z") * motorRotateForceScale;
+            Debug.Log(this.pdu_reader.GetReadOps());
+            Debug.Log(this.pdu_reader.GetReadOps().Ref("position"));
+            Debug.Log(this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("x"));
+            //target_rotation_angle_rate = this.pdu_reader.GetReadOps().Ref("angular").GetDataFloat64("z") * motorRotateForceScale;
 
             //Debug.Log("read target_velocity=" + this.pdu_reader.GetReadOps().Ref("linear").GetDataFloat64("x"));
             //Debug.Log("target_rotation_angle_rate=" + target_rotation_angle_rate);
             //Debug.Log("target_rotation_angle_rate=" + target_rotation_angle_rate);
 
-            if (this.motors[(int)MotorType.MotorType_Right] != null)
-            {
-                motors[(int)MotorType.MotorType_Right].SetTargetVelicty((float)(target_velocity + (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
-            }
-            if (this.motors[(int)MotorType.MotorType_Left] != null)
-            {
-                //Debug.Log("target_velocity=" + target_velocity);
-                motors[(int)MotorType.MotorType_Left].SetTargetVelicty((float)(target_velocity - (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
-            }
+            //if (this.motors[(int)MotorType.MotorType_Right] != null)
+            //{
+            //    motors[(int)MotorType.MotorType_Right].SetTargetVelicty((float)(target_velocity + (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
+            //}
+            //if (this.motors[(int)MotorType.MotorType_Left] != null)
+            //{
+            //    //Debug.Log("target_velocity=" + target_velocity);
+            //    motors[(int)MotorType.MotorType_Left].SetTargetVelicty((float)(target_velocity - (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
+            //}
         }
         public IoMethod io_method = IoMethod.RPC;
         public CommMethod comm_method = CommMethod.UDP;
