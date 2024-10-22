@@ -1,4 +1,4 @@
-2024/10/07 00:03:13.590 INFO jsonstring={
+2024/10/21 22:55:17.766 INFO jsonstring={
   "cpp_mode": "asset_rpc_cpp",
   "cpp_asset_name": "UnityAsset",
   "core_ipaddr": null,
@@ -35,7 +35,17 @@
   "param_world_config_path": null,
   "param_world_config": null
 }
-2024/10/07 00:03:13.594 INFO jsonstring=[
+2024/10/21 22:55:17.770 INFO jsonstring=[
+  {
+    "pdu_type_name": "geometry_msgs/Twist",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
+  },
+  {
+    "pdu_type_name": "Twist",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
+  },
   {
     "pdu_type_name": "std_msgs/Bool",
     "fields": null,
@@ -45,6 +55,16 @@
     "pdu_type_name": "Bool",
     "fields": null,
     "pdu_data_field_path": "./ros_types/json/std_msgs/Bool.json"
+  },
+  {
+    "pdu_type_name": "geometry_msgs/Pose",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
+  },
+  {
+    "pdu_type_name": "Pose",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
   },
   {
     "pdu_type_name": "sensor_msgs/CompressedImage",
@@ -67,26 +87,6 @@
     "pdu_data_field_path": "./ros_types/json/sensor_msgs/LaserScan.json"
   },
   {
-    "pdu_type_name": "geometry_msgs/Twist",
-    "fields": null,
-    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
-  },
-  {
-    "pdu_type_name": "Twist",
-    "fields": null,
-    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
-  },
-  {
-    "pdu_type_name": "geometry_msgs/Pose",
-    "fields": null,
-    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
-  },
-  {
-    "pdu_type_name": "Pose",
-    "fields": null,
-    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
-  },
-  {
     "pdu_type_name": "time",
     "fields": null,
     "pdu_data_field_path": "./ros_types/json/builtin_interfaces/Time.json"
@@ -97,20 +97,47 @@
     "pdu_data_field_path": "./HakoniwaSimTime.json"
   }
 ]
-2024/10/07 00:03:13.597 DEBUG LoadPduConfig(): pdu_type_name=std_msgs/Bool
-2024/10/07 00:03:13.598 DEBUG LoadPduConfig(): pdu_type_name=Bool
-2024/10/07 00:03:13.598 DEBUG LoadPduConfig(): pdu_type_name=sensor_msgs/CompressedImage
-2024/10/07 00:03:13.598 DEBUG LoadPduConfig(): pdu_type_name=CompressedImage
-2024/10/07 00:03:13.598 DEBUG LoadPduConfig(): pdu_type_name=sensor_msgs/LaserScan
-2024/10/07 00:03:13.598 DEBUG LoadPduConfig(): pdu_type_name=LaserScan
-2024/10/07 00:03:13.598 DEBUG LoadPduConfig(): pdu_type_name=geometry_msgs/Twist
-2024/10/07 00:03:13.599 DEBUG LoadPduConfig(): pdu_type_name=Twist
-2024/10/07 00:03:13.599 DEBUG LoadPduConfig(): pdu_type_name=geometry_msgs/Pose
-2024/10/07 00:03:13.599 DEBUG LoadPduConfig(): pdu_type_name=Pose
-2024/10/07 00:03:13.599 DEBUG LoadPduConfig(): pdu_type_name=time
-2024/10/07 00:03:13.599 DEBUG LoadPduConfig(): pdu_type_name=HakoniwaSimTime
-2024/10/07 00:03:13.603 INFO SERVER MODE
-2024/10/07 00:03:13.605 INFO jsonstring=[
+2024/10/21 22:55:17.772 DEBUG LoadPduConfig(): pdu_type_name=geometry_msgs/Twist
+2024/10/21 22:55:17.772 DEBUG LoadPduConfig(): pdu_type_name=Twist
+2024/10/21 22:55:17.773 DEBUG LoadPduConfig(): pdu_type_name=std_msgs/Bool
+2024/10/21 22:55:17.773 DEBUG LoadPduConfig(): pdu_type_name=Bool
+2024/10/21 22:55:17.773 DEBUG LoadPduConfig(): pdu_type_name=geometry_msgs/Pose
+2024/10/21 22:55:17.773 DEBUG LoadPduConfig(): pdu_type_name=Pose
+2024/10/21 22:55:17.773 DEBUG LoadPduConfig(): pdu_type_name=sensor_msgs/CompressedImage
+2024/10/21 22:55:17.774 DEBUG LoadPduConfig(): pdu_type_name=CompressedImage
+2024/10/21 22:55:17.774 DEBUG LoadPduConfig(): pdu_type_name=sensor_msgs/LaserScan
+2024/10/21 22:55:17.774 DEBUG LoadPduConfig(): pdu_type_name=LaserScan
+2024/10/21 22:55:17.775 DEBUG LoadPduConfig(): pdu_type_name=time
+2024/10/21 22:55:17.775 DEBUG LoadPduConfig(): pdu_type_name=HakoniwaSimTime
+2024/10/21 22:55:17.779 INFO SERVER MODE
+2024/10/21 22:55:17.780 INFO jsonstring=[
+  {
+    "name": "RobotControllerTest_cmd_velPdu",
+    "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter",
+    "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter",
+    "path": null,
+    "conv_path": null,
+    "pdu_config_name": "geometry_msgs/Twist",
+    "topic_message_name": null
+  },
+  {
+    "name": "RobotController_cmd_velPdu",
+    "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter",
+    "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter",
+    "path": null,
+    "conv_path": null,
+    "pdu_config_name": "geometry_msgs/Twist",
+    "topic_message_name": null
+  },
+  {
+    "name": "CameraTransmiter_pose_dataPdu",
+    "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter",
+    "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter",
+    "path": null,
+    "conv_path": null,
+    "pdu_config_name": "geometry_msgs/Pose",
+    "topic_message_name": null
+  },
   {
     "name": "SampleRobot_touch_sensorPdu",
     "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter",
@@ -139,85 +166,176 @@
     "topic_message_name": null
   }
 ]
-2024/10/07 00:03:13.605 DEBUG LoadPduWriters(): filepath=./pdu_writers.json
-2024/10/07 00:03:13.605 DEBUG LoadPduWriters(): pdu_writers=Hakoniwa.PluggableAsset.PduWriterConfig[]
-2024/10/07 00:03:13.605 DEBUG LoadPduWriters(): topic_message_name=std_msgs/Bool
-2024/10/07 00:03:13.607 DEBUG SetPdu(): BEFORE: package_name = not stacked: std_msgs/Bool
-2024/10/07 00:03:13.607 DEBUG SetPdu(): arg_pdu_type_name = std_msgs/Bool
-2024/10/07 00:03:13.607 DEBUG SetPdu(): AFTER: package_name = std_msgs
-2024/10/07 00:03:13.608 DEBUG PRIMITIVE:data type=bool
-2024/10/07 00:03:13.609 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.609 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.609 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.609 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.609 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.609 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.609 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.609 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.609 DEBUG pdu_writer: SampleRobot_touch_sensorPdu
-2024/10/07 00:03:13.609 DEBUG LoadPduWriters(): topic_message_name=sensor_msgs/CompressedImage
-2024/10/07 00:03:13.609 DEBUG SetPdu(): BEFORE: package_name = not stacked: sensor_msgs/CompressedImage
-2024/10/07 00:03:13.609 DEBUG SetPdu(): arg_pdu_type_name = sensor_msgs/CompressedImage
-2024/10/07 00:03:13.609 DEBUG SetPdu(): AFTER: package_name = sensor_msgs
-2024/10/07 00:03:13.609 DEBUG STRUCT:header type=std_msgs/Header
-2024/10/07 00:03:13.609 DEBUG SetPdu(): BEFORE: package_name = sensor_msgs
-2024/10/07 00:03:13.609 DEBUG SetPdu(): arg_pdu_type_name = std_msgs/Header
-2024/10/07 00:03:13.609 DEBUG SetPdu(): AFTER: package_name = std_msgs
-2024/10/07 00:03:13.609 DEBUG STRUCT:stamp type=builtin_interfaces/Time
-2024/10/07 00:03:13.610 DEBUG SetPdu(): BEFORE: package_name = std_msgs
-2024/10/07 00:03:13.610 DEBUG SetPdu(): arg_pdu_type_name = builtin_interfaces/Time
-2024/10/07 00:03:13.610 DEBUG SetPdu(): AFTER: package_name = builtin_interfaces
-2024/10/07 00:03:13.610 DEBUG PRIMITIVE:sec type=int32
-2024/10/07 00:03:13.610 DEBUG PRIMITIVE:nanosec type=uint32
-2024/10/07 00:03:13.610 DEBUG PRIMITIVE:frame_id type=string
-2024/10/07 00:03:13.610 DEBUG PRIMITIVE:format type=string
-2024/10/07 00:03:13.610 DEBUG type uint8[] name data
-2024/10/07 00:03:13.610 DEBUG PRIMITIVE ARRAY:data type=uint8[]
-2024/10/07 00:03:13.611 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.611 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.611 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.611 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.611 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.611 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.611 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.611 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.611 DEBUG pdu_writer: SampleRobot_camera_image_jpgPdu
-2024/10/07 00:03:13.611 DEBUG LoadPduWriters(): topic_message_name=sensor_msgs/LaserScan
-2024/10/07 00:03:13.611 DEBUG SetPdu(): BEFORE: package_name = not stacked: sensor_msgs/LaserScan
-2024/10/07 00:03:13.611 DEBUG SetPdu(): arg_pdu_type_name = sensor_msgs/LaserScan
-2024/10/07 00:03:13.611 DEBUG SetPdu(): AFTER: package_name = sensor_msgs
-2024/10/07 00:03:13.611 DEBUG STRUCT:header type=std_msgs/Header
-2024/10/07 00:03:13.611 DEBUG SetPdu(): BEFORE: package_name = sensor_msgs
-2024/10/07 00:03:13.611 DEBUG SetPdu(): arg_pdu_type_name = std_msgs/Header
-2024/10/07 00:03:13.611 DEBUG SetPdu(): AFTER: package_name = std_msgs
-2024/10/07 00:03:13.611 DEBUG STRUCT:stamp type=builtin_interfaces/Time
-2024/10/07 00:03:13.611 DEBUG SetPdu(): BEFORE: package_name = std_msgs
-2024/10/07 00:03:13.611 DEBUG SetPdu(): arg_pdu_type_name = builtin_interfaces/Time
-2024/10/07 00:03:13.611 DEBUG SetPdu(): AFTER: package_name = builtin_interfaces
-2024/10/07 00:03:13.611 DEBUG PRIMITIVE:sec type=int32
-2024/10/07 00:03:13.611 DEBUG PRIMITIVE:nanosec type=uint32
-2024/10/07 00:03:13.611 DEBUG PRIMITIVE:frame_id type=string
-2024/10/07 00:03:13.611 DEBUG PRIMITIVE:angle_min type=float32
-2024/10/07 00:03:13.611 DEBUG PRIMITIVE:angle_max type=float32
-2024/10/07 00:03:13.611 DEBUG PRIMITIVE:angle_increment type=float32
-2024/10/07 00:03:13.611 DEBUG PRIMITIVE:time_increment type=float32
-2024/10/07 00:03:13.612 DEBUG PRIMITIVE:scan_time type=float32
-2024/10/07 00:03:13.612 DEBUG PRIMITIVE:range_min type=float32
-2024/10/07 00:03:13.612 DEBUG PRIMITIVE:range_max type=float32
-2024/10/07 00:03:13.612 DEBUG type float32[] name ranges
-2024/10/07 00:03:13.612 DEBUG PRIMITIVE ARRAY:ranges type=float32[]
-2024/10/07 00:03:13.612 DEBUG type float32[] name intensities
-2024/10/07 00:03:13.612 DEBUG PRIMITIVE ARRAY:intensities type=float32[]
-2024/10/07 00:03:13.612 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.612 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.612 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.612 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
-2024/10/07 00:03:13.612 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.612 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.612 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.612 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
-2024/10/07 00:03:13.612 DEBUG pdu_writer: SampleRobot_scanPdu
-2024/10/07 00:03:13.614 INFO jsonstring=[
+2024/10/21 22:55:17.780 DEBUG LoadPduWriters(): filepath=./pdu_writers.json
+2024/10/21 22:55:17.780 DEBUG LoadPduWriters(): pdu_writers=Hakoniwa.PluggableAsset.PduWriterConfig[]
+2024/10/21 22:55:17.780 DEBUG LoadPduWriters(): topic_message_name=geometry_msgs/Twist
+2024/10/21 22:55:17.782 DEBUG SetPdu(): BEFORE: package_name = not stacked: geometry_msgs/Twist
+2024/10/21 22:55:17.782 DEBUG SetPdu(): arg_pdu_type_name = geometry_msgs/Twist
+2024/10/21 22:55:17.782 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.782 DEBUG STRUCT:linear type=Vector3
+2024/10/21 22:55:17.782 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.782 DEBUG SetPdu(): arg_pdu_type_name = Vector3
+2024/10/21 22:55:17.783 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.783 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.783 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.783 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.783 DEBUG STRUCT:angular type=Vector3
+2024/10/21 22:55:17.783 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.783 DEBUG SetPdu(): arg_pdu_type_name = Vector3
+2024/10/21 22:55:17.783 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.783 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.783 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.783 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.783 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.783 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.783 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.785 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.785 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.785 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.785 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.785 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.785 DEBUG pdu_writer: RobotControllerTest_cmd_velPdu
+2024/10/21 22:55:17.785 DEBUG LoadPduWriters(): topic_message_name=geometry_msgs/Twist
+2024/10/21 22:55:17.785 DEBUG SetPdu(): BEFORE: package_name = not stacked: geometry_msgs/Twist
+2024/10/21 22:55:17.785 DEBUG SetPdu(): arg_pdu_type_name = geometry_msgs/Twist
+2024/10/21 22:55:17.785 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG STRUCT:linear type=Vector3
+2024/10/21 22:55:17.785 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG SetPdu(): arg_pdu_type_name = Vector3
+2024/10/21 22:55:17.785 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.785 DEBUG STRUCT:angular type=Vector3
+2024/10/21 22:55:17.785 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG SetPdu(): arg_pdu_type_name = Vector3
+2024/10/21 22:55:17.785 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.785 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.785 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.785 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.785 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.785 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.785 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.785 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.785 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.785 DEBUG pdu_writer: RobotController_cmd_velPdu
+2024/10/21 22:55:17.785 DEBUG LoadPduWriters(): topic_message_name=geometry_msgs/Pose
+2024/10/21 22:55:17.785 DEBUG SetPdu(): BEFORE: package_name = not stacked: geometry_msgs/Pose
+2024/10/21 22:55:17.785 DEBUG SetPdu(): arg_pdu_type_name = geometry_msgs/Pose
+2024/10/21 22:55:17.785 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG STRUCT:position type=Point
+2024/10/21 22:55:17.785 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG SetPdu(): arg_pdu_type_name = Point
+2024/10/21 22:55:17.785 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.785 DEBUG STRUCT:orientation type=Quaternion
+2024/10/21 22:55:17.785 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG SetPdu(): arg_pdu_type_name = Quaternion
+2024/10/21 22:55:17.785 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.785 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.786 DEBUG PRIMITIVE:w type=float64
+2024/10/21 22:55:17.786 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.786 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.786 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.786 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.786 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.786 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.786 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.786 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.786 DEBUG pdu_writer: CameraTransmiter_pose_dataPdu
+2024/10/21 22:55:17.786 DEBUG LoadPduWriters(): topic_message_name=std_msgs/Bool
+2024/10/21 22:55:17.786 DEBUG SetPdu(): BEFORE: package_name = not stacked: std_msgs/Bool
+2024/10/21 22:55:17.786 DEBUG SetPdu(): arg_pdu_type_name = std_msgs/Bool
+2024/10/21 22:55:17.786 DEBUG SetPdu(): AFTER: package_name = std_msgs
+2024/10/21 22:55:17.786 DEBUG PRIMITIVE:data type=bool
+2024/10/21 22:55:17.786 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.786 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.786 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.786 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.786 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.786 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.786 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.786 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.786 DEBUG pdu_writer: SampleRobot_touch_sensorPdu
+2024/10/21 22:55:17.786 DEBUG LoadPduWriters(): topic_message_name=sensor_msgs/CompressedImage
+2024/10/21 22:55:17.786 DEBUG SetPdu(): BEFORE: package_name = not stacked: sensor_msgs/CompressedImage
+2024/10/21 22:55:17.786 DEBUG SetPdu(): arg_pdu_type_name = sensor_msgs/CompressedImage
+2024/10/21 22:55:17.786 DEBUG SetPdu(): AFTER: package_name = sensor_msgs
+2024/10/21 22:55:17.786 DEBUG STRUCT:header type=std_msgs/Header
+2024/10/21 22:55:17.786 DEBUG SetPdu(): BEFORE: package_name = sensor_msgs
+2024/10/21 22:55:17.786 DEBUG SetPdu(): arg_pdu_type_name = std_msgs/Header
+2024/10/21 22:55:17.786 DEBUG SetPdu(): AFTER: package_name = std_msgs
+2024/10/21 22:55:17.787 DEBUG STRUCT:stamp type=builtin_interfaces/Time
+2024/10/21 22:55:17.787 DEBUG SetPdu(): BEFORE: package_name = std_msgs
+2024/10/21 22:55:17.787 DEBUG SetPdu(): arg_pdu_type_name = builtin_interfaces/Time
+2024/10/21 22:55:17.787 DEBUG SetPdu(): AFTER: package_name = builtin_interfaces
+2024/10/21 22:55:17.787 DEBUG PRIMITIVE:sec type=int32
+2024/10/21 22:55:17.787 DEBUG PRIMITIVE:nanosec type=uint32
+2024/10/21 22:55:17.787 DEBUG PRIMITIVE:frame_id type=string
+2024/10/21 22:55:17.787 DEBUG PRIMITIVE:format type=string
+2024/10/21 22:55:17.787 DEBUG type uint8[] name data
+2024/10/21 22:55:17.787 DEBUG PRIMITIVE ARRAY:data type=uint8[]
+2024/10/21 22:55:17.788 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.788 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.788 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.788 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.788 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.788 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.788 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.788 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.788 DEBUG pdu_writer: SampleRobot_camera_image_jpgPdu
+2024/10/21 22:55:17.788 DEBUG LoadPduWriters(): topic_message_name=sensor_msgs/LaserScan
+2024/10/21 22:55:17.788 DEBUG SetPdu(): BEFORE: package_name = not stacked: sensor_msgs/LaserScan
+2024/10/21 22:55:17.788 DEBUG SetPdu(): arg_pdu_type_name = sensor_msgs/LaserScan
+2024/10/21 22:55:17.788 DEBUG SetPdu(): AFTER: package_name = sensor_msgs
+2024/10/21 22:55:17.788 DEBUG STRUCT:header type=std_msgs/Header
+2024/10/21 22:55:17.788 DEBUG SetPdu(): BEFORE: package_name = sensor_msgs
+2024/10/21 22:55:17.788 DEBUG SetPdu(): arg_pdu_type_name = std_msgs/Header
+2024/10/21 22:55:17.788 DEBUG SetPdu(): AFTER: package_name = std_msgs
+2024/10/21 22:55:17.788 DEBUG STRUCT:stamp type=builtin_interfaces/Time
+2024/10/21 22:55:17.788 DEBUG SetPdu(): BEFORE: package_name = std_msgs
+2024/10/21 22:55:17.788 DEBUG SetPdu(): arg_pdu_type_name = builtin_interfaces/Time
+2024/10/21 22:55:17.788 DEBUG SetPdu(): AFTER: package_name = builtin_interfaces
+2024/10/21 22:55:17.788 DEBUG PRIMITIVE:sec type=int32
+2024/10/21 22:55:17.788 DEBUG PRIMITIVE:nanosec type=uint32
+2024/10/21 22:55:17.788 DEBUG PRIMITIVE:frame_id type=string
+2024/10/21 22:55:17.788 DEBUG PRIMITIVE:angle_min type=float32
+2024/10/21 22:55:17.788 DEBUG PRIMITIVE:angle_max type=float32
+2024/10/21 22:55:17.788 DEBUG PRIMITIVE:angle_increment type=float32
+2024/10/21 22:55:17.788 DEBUG PRIMITIVE:time_increment type=float32
+2024/10/21 22:55:17.789 DEBUG PRIMITIVE:scan_time type=float32
+2024/10/21 22:55:17.789 DEBUG PRIMITIVE:range_min type=float32
+2024/10/21 22:55:17.789 DEBUG PRIMITIVE:range_max type=float32
+2024/10/21 22:55:17.789 DEBUG type float32[] name ranges
+2024/10/21 22:55:17.789 DEBUG PRIMITIVE ARRAY:ranges type=float32[]
+2024/10/21 22:55:17.789 DEBUG type float32[] name intensities
+2024/10/21 22:55:17.789 DEBUG PRIMITIVE ARRAY:intensities type=float32[]
+2024/10/21 22:55:17.789 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.789 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.789 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.789 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter
+2024/10/21 22:55:17.789 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.789 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.789 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.789 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter
+2024/10/21 22:55:17.789 DEBUG pdu_writer: SampleRobot_scanPdu
+2024/10/21 22:55:17.790 INFO jsonstring=[
+  {
+    "name": "Button_button_sensorPdu",
+    "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
+    "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter",
+    "path": null,
+    "conv_path": null,
+    "pdu_config_name": "std_msgs/Bool",
+    "topic_message_name": null
+  },
   {
     "name": "SampleRobot_cmd_velPdu",
     "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
@@ -235,142 +353,151 @@
     "conv_path": null,
     "pdu_config_name": "geometry_msgs/Pose",
     "topic_message_name": null
-  },
-  {
-    "name": "Button_button_sensorPdu",
-    "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
-    "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter",
-    "path": null,
-    "conv_path": null,
-    "pdu_config_name": "std_msgs/Bool",
-    "topic_message_name": null
   }
 ]
-2024/10/07 00:03:13.614 DEBUG SetPdu(): BEFORE: package_name = not stacked: geometry_msgs/Twist
-2024/10/07 00:03:13.614 DEBUG SetPdu(): arg_pdu_type_name = geometry_msgs/Twist
-2024/10/07 00:03:13.614 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
-2024/10/07 00:03:13.614 DEBUG STRUCT:linear type=Vector3
-2024/10/07 00:03:13.614 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
-2024/10/07 00:03:13.614 DEBUG SetPdu(): arg_pdu_type_name = Vector3
-2024/10/07 00:03:13.614 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
-2024/10/07 00:03:13.614 DEBUG PRIMITIVE:x type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:y type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:z type=float64
-2024/10/07 00:03:13.615 DEBUG STRUCT:angular type=Vector3
-2024/10/07 00:03:13.615 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
-2024/10/07 00:03:13.615 DEBUG SetPdu(): arg_pdu_type_name = Vector3
-2024/10/07 00:03:13.615 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:x type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:y type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:z type=float64
-2024/10/07 00:03:13.615 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.615 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.615 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.615 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.615 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.615 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.615 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.615 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.615 INFO pdu reader name = SampleRobot_cmd_velPdu
-2024/10/07 00:03:13.615 DEBUG SetPdu(): BEFORE: package_name = not stacked: geometry_msgs/Pose
-2024/10/07 00:03:13.615 DEBUG SetPdu(): arg_pdu_type_name = geometry_msgs/Pose
-2024/10/07 00:03:13.615 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
-2024/10/07 00:03:13.615 DEBUG STRUCT:position type=Point
-2024/10/07 00:03:13.615 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
-2024/10/07 00:03:13.615 DEBUG SetPdu(): arg_pdu_type_name = Point
-2024/10/07 00:03:13.615 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:x type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:y type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:z type=float64
-2024/10/07 00:03:13.615 DEBUG STRUCT:orientation type=Quaternion
-2024/10/07 00:03:13.615 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
-2024/10/07 00:03:13.615 DEBUG SetPdu(): arg_pdu_type_name = Quaternion
-2024/10/07 00:03:13.615 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:x type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:y type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:z type=float64
-2024/10/07 00:03:13.615 DEBUG PRIMITIVE:w type=float64
-2024/10/07 00:03:13.616 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.616 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.616 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.616 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.616 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.616 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.616 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.616 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.616 INFO pdu reader name = Camera_pose_dataPdu
-2024/10/07 00:03:13.616 DEBUG SetPdu(): BEFORE: package_name = not stacked: std_msgs/Bool
-2024/10/07 00:03:13.616 DEBUG SetPdu(): arg_pdu_type_name = std_msgs/Bool
-2024/10/07 00:03:13.616 DEBUG SetPdu(): AFTER: package_name = std_msgs
-2024/10/07 00:03:13.616 DEBUG PRIMITIVE:data type=bool
-2024/10/07 00:03:13.616 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.616 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.616 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.616 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
-2024/10/07 00:03:13.616 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.616 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.616 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.616 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
-2024/10/07 00:03:13.616 INFO pdu reader name = Button_button_sensorPdu
-2024/10/07 00:03:13.620 INFO jsonstring=[
+2024/10/21 22:55:17.790 DEBUG SetPdu(): BEFORE: package_name = not stacked: std_msgs/Bool
+2024/10/21 22:55:17.790 DEBUG SetPdu(): arg_pdu_type_name = std_msgs/Bool
+2024/10/21 22:55:17.790 DEBUG SetPdu(): AFTER: package_name = std_msgs
+2024/10/21 22:55:17.790 DEBUG PRIMITIVE:data type=bool
+2024/10/21 22:55:17.790 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.790 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.790 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.790 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.790 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.790 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.790 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.790 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO pdu reader name = Button_button_sensorPdu
+2024/10/21 22:55:17.791 DEBUG SetPdu(): BEFORE: package_name = not stacked: geometry_msgs/Twist
+2024/10/21 22:55:17.791 DEBUG SetPdu(): arg_pdu_type_name = geometry_msgs/Twist
+2024/10/21 22:55:17.791 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG STRUCT:linear type=Vector3
+2024/10/21 22:55:17.791 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG SetPdu(): arg_pdu_type_name = Vector3
+2024/10/21 22:55:17.791 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.791 DEBUG STRUCT:angular type=Vector3
+2024/10/21 22:55:17.791 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG SetPdu(): arg_pdu_type_name = Vector3
+2024/10/21 22:55:17.791 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.791 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.791 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.791 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.791 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.791 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO pdu reader name = SampleRobot_cmd_velPdu
+2024/10/21 22:55:17.791 DEBUG SetPdu(): BEFORE: package_name = not stacked: geometry_msgs/Pose
+2024/10/21 22:55:17.791 DEBUG SetPdu(): arg_pdu_type_name = geometry_msgs/Pose
+2024/10/21 22:55:17.791 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG STRUCT:position type=Point
+2024/10/21 22:55:17.791 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG SetPdu(): arg_pdu_type_name = Point
+2024/10/21 22:55:17.791 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.791 DEBUG STRUCT:orientation type=Quaternion
+2024/10/21 22:55:17.791 DEBUG SetPdu(): BEFORE: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG SetPdu(): arg_pdu_type_name = Quaternion
+2024/10/21 22:55:17.791 DEBUG SetPdu(): AFTER: package_name = geometry_msgs
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:x type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:y type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:z type=float64
+2024/10/21 22:55:17.791 DEBUG PRIMITIVE:w type=float64
+2024/10/21 22:55:17.791 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.791 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.791 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.791 INFO pdu writer loaded:Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader
+2024/10/21 22:55:17.791 INFO path= class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO typeinfo=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO load typeinfoHakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO activate class_name=Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter
+2024/10/21 22:55:17.791 INFO pdu reader name = Camera_pose_dataPdu
+2024/10/21 22:55:17.796 INFO jsonstring=[
   {
     "name": "custom_reader_connector_0",
-    "pdu_name": "SampleRobot_cmd_velPdu",
+    "pdu_name": "Button_button_sensorPdu",
     "method_name": null
   },
   {
     "name": "custom_reader_connector_1",
-    "pdu_name": "Camera_pose_dataPdu",
+    "pdu_name": "SampleRobot_cmd_velPdu",
     "method_name": null
   },
   {
     "name": "custom_reader_connector_2",
-    "pdu_name": "Button_button_sensorPdu",
+    "pdu_name": "Camera_pose_dataPdu",
     "method_name": null
   }
 ]
-2024/10/07 00:03:13.621 INFO reader connector method_name=
-2024/10/07 00:03:13.621 ERROR GetIoReader(): Can not found io_readers name=
-2024/10/07 00:03:13.621 INFO can not found connector method_name=
-2024/10/07 00:03:13.621 INFO reader connector pdu_name=SampleRobot_cmd_velPdu
-2024/10/07 00:03:13.622 INFO reader connector method_name=
-2024/10/07 00:03:13.622 ERROR GetIoReader(): Can not found io_readers name=
-2024/10/07 00:03:13.622 INFO can not found connector method_name=
-2024/10/07 00:03:13.622 INFO reader connector pdu_name=Camera_pose_dataPdu
-2024/10/07 00:03:13.622 INFO reader connector method_name=
-2024/10/07 00:03:13.622 ERROR GetIoReader(): Can not found io_readers name=
-2024/10/07 00:03:13.622 INFO can not found connector method_name=
-2024/10/07 00:03:13.622 INFO reader connector pdu_name=Button_button_sensorPdu
-2024/10/07 00:03:13.623 INFO jsonstring=[
+2024/10/21 22:55:17.796 INFO reader connector method_name=
+2024/10/21 22:55:17.797 ERROR GetIoReader(): Can not found io_readers name=
+2024/10/21 22:55:17.797 INFO can not found connector method_name=
+2024/10/21 22:55:17.797 INFO reader connector pdu_name=Button_button_sensorPdu
+2024/10/21 22:55:17.797 INFO reader connector method_name=
+2024/10/21 22:55:17.797 ERROR GetIoReader(): Can not found io_readers name=
+2024/10/21 22:55:17.797 INFO can not found connector method_name=
+2024/10/21 22:55:17.797 INFO reader connector pdu_name=SampleRobot_cmd_velPdu
+2024/10/21 22:55:17.797 INFO reader connector method_name=
+2024/10/21 22:55:17.797 ERROR GetIoReader(): Can not found io_readers name=
+2024/10/21 22:55:17.797 INFO can not found connector method_name=
+2024/10/21 22:55:17.797 INFO reader connector pdu_name=Camera_pose_dataPdu
+2024/10/21 22:55:17.798 INFO jsonstring=[
   {
     "name": "custom_writer_connector_0",
-    "pdu_name": "SampleRobot_touch_sensorPdu",
+    "pdu_name": "RobotControllerTest_cmd_velPdu",
     "method_name": null
   },
   {
     "name": "custom_writer_connector_1",
-    "pdu_name": "SampleRobot_camera_image_jpgPdu",
+    "pdu_name": "RobotController_cmd_velPdu",
     "method_name": null
   },
   {
     "name": "custom_writer_connector_2",
+    "pdu_name": "CameraTransmiter_pose_dataPdu",
+    "method_name": null
+  },
+  {
+    "name": "custom_writer_connector_3",
+    "pdu_name": "SampleRobot_touch_sensorPdu",
+    "method_name": null
+  },
+  {
+    "name": "custom_writer_connector_4",
+    "pdu_name": "SampleRobot_camera_image_jpgPdu",
+    "method_name": null
+  },
+  {
+    "name": "custom_writer_connector_5",
     "pdu_name": "SampleRobot_scanPdu",
     "method_name": null
   }
 ]
-2024/10/07 00:03:13.623 INFO can not found connector method_name=
-2024/10/07 00:03:13.624 INFO can not found connector method_name=
-2024/10/07 00:03:13.624 INFO can not found connector method_name=
-2024/10/07 00:03:13.625 INFO jsonstring=[
-  {
-    "outside_asset_name": "None",
-    "reader_connector_name": "custom_reader_connector_0",
-    "writer_connector_name": null
-  },
+2024/10/21 22:55:17.799 INFO can not found connector method_name=
+2024/10/21 22:55:17.799 INFO can not found connector method_name=
+2024/10/21 22:55:17.799 INFO can not found connector method_name=
+2024/10/21 22:55:17.799 INFO can not found connector method_name=
+2024/10/21 22:55:17.799 INFO can not found connector method_name=
+2024/10/21 22:55:17.799 INFO can not found connector method_name=
+2024/10/21 22:55:17.800 INFO jsonstring=[
   {
     "outside_asset_name": "None",
     "reader_connector_name": null,
     "writer_connector_name": "custom_writer_connector_0"
+  },
+  {
+    "outside_asset_name": "None",
+    "reader_connector_name": "custom_reader_connector_0",
+    "writer_connector_name": null
   },
   {
     "outside_asset_name": "None",
@@ -389,23 +516,82 @@
   },
   {
     "outside_asset_name": "None",
+    "reader_connector_name": null,
+    "writer_connector_name": "custom_writer_connector_3"
+  },
+  {
+    "outside_asset_name": "None",
+    "reader_connector_name": null,
+    "writer_connector_name": "custom_writer_connector_4"
+  },
+  {
+    "outside_asset_name": "None",
+    "reader_connector_name": null,
+    "writer_connector_name": "custom_writer_connector_5"
+  },
+  {
+    "outside_asset_name": "None",
     "reader_connector_name": "custom_reader_connector_2",
     "writer_connector_name": null
   }
 ]
-2024/10/07 00:03:13.626 WARN not found writer: 
-2024/10/07 00:03:13.626 INFO PduChannelConnector :
-2024/10/07 00:03:13.626 WARN not found writer: 
-2024/10/07 00:03:13.626 INFO PduChannelConnector :custom_writer_connector_0
-2024/10/07 00:03:13.626 WARN not found writer: 
-2024/10/07 00:03:13.626 INFO PduChannelConnector :custom_writer_connector_1
-2024/10/07 00:03:13.626 WARN not found writer: 
-2024/10/07 00:03:13.626 INFO PduChannelConnector :custom_writer_connector_2
-2024/10/07 00:03:13.626 WARN not found writer: 
-2024/10/07 00:03:13.626 INFO PduChannelConnector :
-2024/10/07 00:03:13.626 WARN not found writer: 
-2024/10/07 00:03:13.626 INFO PduChannelConnector :
-2024/10/07 00:03:13.628 INFO jsonstring=[
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :custom_writer_connector_0
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :custom_writer_connector_1
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :custom_writer_connector_2
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :custom_writer_connector_3
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :custom_writer_connector_4
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :custom_writer_connector_5
+2024/10/21 22:55:17.800 WARN not found writer: 
+2024/10/21 22:55:17.800 INFO PduChannelConnector :
+2024/10/21 22:55:17.803 INFO jsonstring=[
+  {
+    "name": "RobotControllerTest",
+    "pdu_writer_names": [
+      "RobotControllerTest_cmd_velPdu"
+    ],
+    "pdu_reader_names": [],
+    "core_class_name": null
+  },
+  {
+    "name": "CameraTestDriver",
+    "pdu_writer_names": [],
+    "pdu_reader_names": [],
+    "core_class_name": null
+  },
+  {
+    "name": "Button",
+    "pdu_writer_names": [],
+    "pdu_reader_names": [
+      "Button_button_sensorPdu"
+    ],
+    "core_class_name": null
+  },
+  {
+    "name": "RobotController",
+    "pdu_writer_names": [
+      "RobotController_cmd_velPdu"
+    ],
+    "pdu_reader_names": [],
+    "core_class_name": null
+  },
+  {
+    "name": "CameraTransmiter",
+    "pdu_writer_names": [
+      "CameraTransmiter_pose_dataPdu"
+    ],
+    "pdu_reader_names": [],
+    "core_class_name": null
+  },
   {
     "name": "SampleRobot",
     "pdu_writer_names": [
@@ -425,529 +611,521 @@
       "Camera_pose_dataPdu"
     ],
     "core_class_name": null
-  },
-  {
-    "name": "Button",
-    "pdu_writer_names": [],
-    "pdu_reader_names": [
-      "Button_button_sensorPdu"
-    ],
-    "core_class_name": null
-  },
-  {
-    "name": "SampleRobotController",
-    "pdu_writer_names": [],
-    "pdu_reader_names": [],
-    "core_class_name": null
   }
 ]
-2024/10/07 00:03:13.628 DEBUG SampleRobot :pdu io connect add writer:SampleRobot_touch_sensorPdu
-2024/10/07 00:03:13.628 DEBUG PduIoConnector AddWriter: SampleRobot_touch_sensorPdu
-2024/10/07 00:03:13.628 DEBUG SampleRobot :pdu io connect add writer:SampleRobot_camera_image_jpgPdu
-2024/10/07 00:03:13.628 DEBUG PduIoConnector AddWriter: SampleRobot_camera_image_jpgPdu
-2024/10/07 00:03:13.628 DEBUG SampleRobot :pdu io connect add writer:SampleRobot_scanPdu
-2024/10/07 00:03:13.628 DEBUG PduIoConnector AddWriter: SampleRobot_scanPdu
-2024/10/07 00:03:13.628 DEBUG SampleRobot pdu io connect add reader:SampleRobot_cmd_velPdu
-2024/10/07 00:03:13.629 DEBUG Camera pdu io connect add reader:Camera_pose_dataPdu
-2024/10/07 00:03:13.629 DEBUG Button pdu io connect add reader:Button_button_sensorPdu
-2024/10/07 00:03:13.632 INFO ParseAll() package_dirs=./ros_types/offset
-2024/10/07 00:03:13.632 INFO package_name=builtin_interfaces
-2024/10/07 00:03:13.632 INFO tmp_dir=./ros_types/offset/builtin_interfaces
-2024/10/07 00:03:13.632 INFO filepaths.Length=1
-2024/10/07 00:03:13.632 INFO Parse filepath=./ros_types/offset/builtin_interfaces/Time.offset
-2024/10/07 00:03:13.633 INFO PduOffset line=single:primitive:sec:int32:0:4
-2024/10/07 00:03:13.633 INFO PduOffset line=single:primitive:nanosec:uint32:4:4
-2024/10/07 00:03:13.634 INFO PduOffset key=builtin_interfaces/Time
-2024/10/07 00:03:13.634 INFO package_name=can_msgs
-2024/10/07 00:03:13.634 INFO tmp_dir=./ros_types/offset/can_msgs
-2024/10/07 00:03:13.634 INFO filepaths.Length=3
-2024/10/07 00:03:13.634 INFO Parse filepath=./ros_types/offset/can_msgs/HakoCan.offset
-2024/10/07 00:03:13.634 INFO PduOffset line=single:struct:head:HakoCanHead:0:20
-2024/10/07 00:03:13.634 INFO PduOffset line=single:struct:body:HakoCanBody:20:8
-2024/10/07 00:03:13.634 INFO PduOffset key=can_msgs/HakoCan
-2024/10/07 00:03:13.634 INFO Parse filepath=./ros_types/offset/can_msgs/HakoCanBody.offset
-2024/10/07 00:03:13.634 INFO PduOffset line=array:primitive:data:uint8:0:8:8
-2024/10/07 00:03:13.634 INFO PduOffset key=can_msgs/HakoCanBody
-2024/10/07 00:03:13.634 INFO Parse filepath=./ros_types/offset/can_msgs/HakoCanHead.offset
-2024/10/07 00:03:13.634 INFO PduOffset line=single:primitive:channel:uint32:0:4
-2024/10/07 00:03:13.634 INFO PduOffset line=single:primitive:ide:uint32:4:4
-2024/10/07 00:03:13.634 INFO PduOffset line=single:primitive:rtr:uint32:8:4
-2024/10/07 00:03:13.634 INFO PduOffset line=single:primitive:dlc:uint32:12:4
-2024/10/07 00:03:13.634 INFO PduOffset line=single:primitive:canid:uint32:16:4
-2024/10/07 00:03:13.634 INFO PduOffset key=can_msgs/HakoCanHead
-2024/10/07 00:03:13.634 INFO package_name=ev3_msgs
-2024/10/07 00:03:13.635 INFO tmp_dir=./ros_types/offset/ev3_msgs
-2024/10/07 00:03:13.635 INFO filepaths.Length=7
-2024/10/07 00:03:13.635 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduActuator.offset
-2024/10/07 00:03:13.635 INFO PduOffset line=single:struct:head:Ev3PduActuatorHeader:0:152
-2024/10/07 00:03:13.635 INFO PduOffset line=array:primitive:leds:uint8:152:1:1
-2024/10/07 00:03:13.635 INFO PduOffset line=array:struct:motors:Ev3PduMotor:156:36:3
-2024/10/07 00:03:13.635 INFO PduOffset line=single:primitive:gyro_reset:uint32:192:4
-2024/10/07 00:03:13.635 INFO PduOffset key=ev3_msgs/Ev3PduActuator
-2024/10/07 00:03:13.635 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduActuatorHeader.offset
-2024/10/07 00:03:13.635 INFO PduOffset line=single:primitive:name:string:0:128
-2024/10/07 00:03:13.635 INFO PduOffset line=single:primitive:version:uint32:128:4
-2024/10/07 00:03:13.635 INFO PduOffset line=single:primitive:asset_time:int64:136:8
-2024/10/07 00:03:13.635 INFO PduOffset line=single:primitive:ext_off:uint32:144:4
-2024/10/07 00:03:13.635 INFO PduOffset line=single:primitive:ext_size:uint32:148:4
-2024/10/07 00:03:13.635 INFO PduOffset key=ev3_msgs/Ev3PduActuatorHeader
-2024/10/07 00:03:13.635 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduColorSensor.offset
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:color:uint32:0:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:reflect:uint32:4:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:rgb_r:uint32:8:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:rgb_g:uint32:12:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:rgb_b:uint32:16:4
-2024/10/07 00:03:13.636 INFO PduOffset key=ev3_msgs/Ev3PduColorSensor
-2024/10/07 00:03:13.636 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduMotor.offset
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:power:int32:0:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:stop:uint32:4:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:reset_angle:uint32:8:4
-2024/10/07 00:03:13.636 INFO PduOffset key=ev3_msgs/Ev3PduMotor
-2024/10/07 00:03:13.636 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduSensor.offset
-2024/10/07 00:03:13.636 INFO PduOffset line=single:struct:head:Ev3PduSensorHeader:0:152
-2024/10/07 00:03:13.636 INFO PduOffset line=array:primitive:buttons:uint8:152:1:1
-2024/10/07 00:03:13.636 INFO PduOffset line=array:struct:color_sensors:Ev3PduColorSensor:156:40:2
-2024/10/07 00:03:13.636 INFO PduOffset line=array:struct:touch_sensors:Ev3PduTouchSensor:196:8:2
-2024/10/07 00:03:13.636 INFO PduOffset line=array:primitive:motor_angle:uint32:204:12:3
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:gyro_degree:int32:216:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:gyro_degree_rate:int32:220:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:sensor_ultrasonic:uint32:224:4
-2024/10/07 00:03:13.636 INFO PduOffset line=single:primitive:gps_lat:float64:232:8
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:gps_lon:float64:240:8
-2024/10/07 00:03:13.637 INFO PduOffset key=ev3_msgs/Ev3PduSensor
-2024/10/07 00:03:13.637 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduSensorHeader.offset
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:name:string:0:128
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:version:uint32:128:4
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:hakoniwa_time:int64:136:8
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:ext_off:uint32:144:4
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:ext_size:uint32:148:4
-2024/10/07 00:03:13.637 INFO PduOffset key=ev3_msgs/Ev3PduSensorHeader
-2024/10/07 00:03:13.637 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduTouchSensor.offset
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:value:uint32:0:4
-2024/10/07 00:03:13.637 INFO PduOffset key=ev3_msgs/Ev3PduTouchSensor
-2024/10/07 00:03:13.637 INFO package_name=geometry_msgs
-2024/10/07 00:03:13.637 INFO tmp_dir=./ros_types/offset/geometry_msgs
-2024/10/07 00:03:13.637 INFO filepaths.Length=9
-2024/10/07 00:03:13.637 INFO Parse filepath=./ros_types/offset/geometry_msgs/Point.offset
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:x:float64:0:8
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:y:float64:8:8
-2024/10/07 00:03:13.637 INFO PduOffset line=single:primitive:z:float64:16:8
-2024/10/07 00:03:13.637 INFO PduOffset key=geometry_msgs/Point
-2024/10/07 00:03:13.637 INFO Parse filepath=./ros_types/offset/geometry_msgs/Pose.offset
-2024/10/07 00:03:13.638 INFO PduOffset line=single:struct:position:Point:0:24
-2024/10/07 00:03:13.638 INFO PduOffset line=single:struct:orientation:Quaternion:24:32
-2024/10/07 00:03:13.638 INFO PduOffset key=geometry_msgs/Pose
-2024/10/07 00:03:13.638 INFO Parse filepath=./ros_types/offset/geometry_msgs/PoseWithCovariance.offset
-2024/10/07 00:03:13.638 INFO PduOffset line=single:struct:pose:Pose:0:56
-2024/10/07 00:03:13.638 INFO PduOffset line=array:primitive:covariance:float64:56:288:36
-2024/10/07 00:03:13.638 INFO PduOffset key=geometry_msgs/PoseWithCovariance
-2024/10/07 00:03:13.638 INFO Parse filepath=./ros_types/offset/geometry_msgs/Quaternion.offset
-2024/10/07 00:03:13.638 INFO PduOffset line=single:primitive:x:float64:0:8
-2024/10/07 00:03:13.638 INFO PduOffset line=single:primitive:y:float64:8:8
-2024/10/07 00:03:13.638 INFO PduOffset line=single:primitive:z:float64:16:8
-2024/10/07 00:03:13.638 INFO PduOffset line=single:primitive:w:float64:24:8
-2024/10/07 00:03:13.638 INFO PduOffset key=geometry_msgs/Quaternion
-2024/10/07 00:03:13.638 INFO Parse filepath=./ros_types/offset/geometry_msgs/Transform.offset
-2024/10/07 00:03:13.641 INFO PduOffset line=single:struct:translation:Vector3:0:24
-2024/10/07 00:03:13.641 INFO PduOffset line=single:struct:rotation:Quaternion:24:32
-2024/10/07 00:03:13.641 INFO PduOffset key=geometry_msgs/Transform
-2024/10/07 00:03:13.641 INFO Parse filepath=./ros_types/offset/geometry_msgs/TransformStamped.offset
-2024/10/07 00:03:13.641 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.641 INFO PduOffset line=single:primitive:child_frame_id:string:136:128
-2024/10/07 00:03:13.641 INFO PduOffset line=single:struct:transform:Transform:264:56
-2024/10/07 00:03:13.641 INFO PduOffset key=geometry_msgs/TransformStamped
-2024/10/07 00:03:13.641 INFO Parse filepath=./ros_types/offset/geometry_msgs/Twist.offset
-2024/10/07 00:03:13.642 INFO PduOffset line=single:struct:linear:Vector3:0:24
-2024/10/07 00:03:13.642 INFO PduOffset line=single:struct:angular:Vector3:24:24
-2024/10/07 00:03:13.642 INFO PduOffset key=geometry_msgs/Twist
-2024/10/07 00:03:13.642 INFO Parse filepath=./ros_types/offset/geometry_msgs/TwistWithCovariance.offset
-2024/10/07 00:03:13.642 INFO PduOffset line=single:struct:twist:Twist:0:48
-2024/10/07 00:03:13.642 INFO PduOffset line=array:primitive:covariance:float64:48:288:36
-2024/10/07 00:03:13.642 INFO PduOffset key=geometry_msgs/TwistWithCovariance
-2024/10/07 00:03:13.642 INFO Parse filepath=./ros_types/offset/geometry_msgs/Vector3.offset
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:x:float64:0:8
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:y:float64:8:8
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:z:float64:16:8
-2024/10/07 00:03:13.642 INFO PduOffset key=geometry_msgs/Vector3
-2024/10/07 00:03:13.642 INFO package_name=hako_mavlink_msgs
-2024/10/07 00:03:13.642 INFO tmp_dir=./ros_types/offset/hako_mavlink_msgs
-2024/10/07 00:03:13.642 INFO filepaths.Length=4
-2024/10/07 00:03:13.642 INFO Parse filepath=./ros_types/offset/hako_mavlink_msgs/HakoHilActuatorControls.offset
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:time_usec:uint64:0:8
-2024/10/07 00:03:13.642 INFO PduOffset line=array:primitive:controls:float32:8:64:16
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:mode:uint8:72:1
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:flags:uint64:80:8
-2024/10/07 00:03:13.642 INFO PduOffset key=hako_mavlink_msgs/HakoHilActuatorControls
-2024/10/07 00:03:13.642 INFO Parse filepath=./ros_types/offset/hako_mavlink_msgs/HakoHilGps.offset
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:time_usec:uint64:0:8
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:lat:int32:8:4
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:lon:int32:12:4
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:alt:int32:16:4
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:eph:uint16:20:2
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:epv:uint16:22:2
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:vel:uint16:24:2
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:vn:int16:26:2
-2024/10/07 00:03:13.642 INFO PduOffset line=single:primitive:ve:int16:28:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:vd:int16:30:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:cog:uint16:32:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:satellites_visible:uint8:34:1
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:id:uint8:35:1
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:yaw:uint8:36:1
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:fix_type:uint8:37:1
-2024/10/07 00:03:13.643 INFO PduOffset key=hako_mavlink_msgs/HakoHilGps
-2024/10/07 00:03:13.643 INFO Parse filepath=./ros_types/offset/hako_mavlink_msgs/HakoHilSensor.offset
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:time_usec:uint64:0:8
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:xacc:float32:8:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:yacc:float32:12:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:zacc:float32:16:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:xgyro:float32:20:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:ygyro:float32:24:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:zgyro:float32:28:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:xmag:float32:32:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:ymag:float32:36:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:zmag:float32:40:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:abs_pressure:float32:44:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:diff_pressure:float32:48:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:pressure_alt:float32:52:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:temperature:float32:56:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:fields_updated:uint32:60:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:id:uint8:64:1
-2024/10/07 00:03:13.643 INFO PduOffset key=hako_mavlink_msgs/HakoHilSensor
-2024/10/07 00:03:13.643 INFO Parse filepath=./ros_types/offset/hako_mavlink_msgs/HakoHilStateQuaternion.offset
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:time_usec:uint64:0:8
-2024/10/07 00:03:13.643 INFO PduOffset line=array:primitive:attitude_quaternion:float32:8:16:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:rollspeed:float32:24:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:pitchspeed:float32:28:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:yawspeed:float32:32:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:lat:int32:36:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:lon:int32:40:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:alt:int32:44:4
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:vx:int16:48:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:vy:int16:50:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:vz:int16:52:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:ind_airspeed:uint16:54:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:true_airspeed:uint16:56:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:xacc:int16:58:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:yacc:int16:60:2
-2024/10/07 00:03:13.643 INFO PduOffset line=single:primitive:zacc:int16:62:2
-2024/10/07 00:03:13.643 INFO PduOffset key=hako_mavlink_msgs/HakoHilStateQuaternion
-2024/10/07 00:03:13.643 INFO package_name=hako_msgs
-2024/10/07 00:03:13.644 INFO tmp_dir=./ros_types/offset/hako_msgs
-2024/10/07 00:03:13.644 INFO filepaths.Length=18
-2024/10/07 00:03:13.644 INFO Parse filepath=./ros_types/offset/hako_msgs/Collision.offset
-2024/10/07 00:03:13.644 INFO PduOffset line=single:primitive:collision:bool:0:4
-2024/10/07 00:03:13.644 INFO PduOffset line=single:primitive:contact_num:uint32:4:4
-2024/10/07 00:03:13.644 INFO PduOffset line=single:struct:relative_velocity:geometry_msgs/Vector3:8:24
-2024/10/07 00:03:13.644 INFO PduOffset line=array:struct:contact_position:geometry_msgs/Point:32:240:10
-2024/10/07 00:03:13.644 INFO PduOffset line=single:primitive:restitution_coefficient:float64:272:8
-2024/10/07 00:03:13.644 INFO PduOffset key=hako_msgs/Collision
-2024/10/07 00:03:13.644 INFO Parse filepath=./ros_types/offset/hako_msgs/Disturbance.offset
-2024/10/07 00:03:13.644 INFO PduOffset line=single:struct:d_temp:hako_msgs/DisturbanceTemperature:0:8
-2024/10/07 00:03:13.644 INFO PduOffset key=hako_msgs/Disturbance
-2024/10/07 00:03:13.644 INFO Parse filepath=./ros_types/offset/hako_msgs/DisturbanceTemperature.offset
-2024/10/07 00:03:13.644 INFO PduOffset line=single:primitive:value:float64:0:8
-2024/10/07 00:03:13.644 INFO PduOffset key=hako_msgs/DisturbanceTemperature
-2024/10/07 00:03:13.644 INFO Parse filepath=./ros_types/offset/hako_msgs/GameControllerOperation.offset
-2024/10/07 00:03:13.644 INFO PduOffset line=array:primitive:axis:float64:0:48:6
-2024/10/07 00:03:13.644 INFO PduOffset line=array:primitive:button:bool:48:60:15
-2024/10/07 00:03:13.644 INFO PduOffset key=hako_msgs/GameControllerOperation
-2024/10/07 00:03:13.644 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCameraData.offset
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:request_id:int32:0:4
-2024/10/07 00:03:13.645 INFO PduOffset line=single:struct:image:sensor_msgs/CompressedImage:4:272
-2024/10/07 00:03:13.645 INFO PduOffset key=hako_msgs/HakoCameraData
-2024/10/07 00:03:13.645 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCameraInfo.offset
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:request_id:int32:0:4
-2024/10/07 00:03:13.645 INFO PduOffset line=single:struct:angle:geometry_msgs/Vector3:8:24
-2024/10/07 00:03:13.645 INFO PduOffset key=hako_msgs/HakoCameraInfo
-2024/10/07 00:03:13.645 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCmdCamera.offset
-2024/10/07 00:03:13.645 INFO PduOffset line=single:struct:header:HakoCmdHeader:0:12
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:request_id:int32:12:4
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:encode_type:int32:16:4
-2024/10/07 00:03:13.645 INFO PduOffset key=hako_msgs/HakoCmdCamera
-2024/10/07 00:03:13.645 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCmdCameraMove.offset
-2024/10/07 00:03:13.645 INFO PduOffset line=single:struct:header:HakoCmdHeader:0:12
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:request_id:int32:12:4
-2024/10/07 00:03:13.645 INFO PduOffset line=single:struct:angle:geometry_msgs/Vector3:16:24
-2024/10/07 00:03:13.645 INFO PduOffset key=hako_msgs/HakoCmdCameraMove
-2024/10/07 00:03:13.645 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCmdHeader.offset
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:request:bool:0:4
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:result:bool:4:4
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:result_code:int32:8:4
-2024/10/07 00:03:13.645 INFO PduOffset key=hako_msgs/HakoCmdHeader
-2024/10/07 00:03:13.645 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCmdMagnetHolder.offset
-2024/10/07 00:03:13.645 INFO PduOffset line=single:struct:header:HakoCmdHeader:0:12
-2024/10/07 00:03:13.645 INFO PduOffset line=single:primitive:magnet_on:bool:12:4
-2024/10/07 00:03:13.645 INFO PduOffset key=hako_msgs/HakoCmdMagnetHolder
-2024/10/07 00:03:13.645 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoDroneCmdHeader.offset
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:request:bool:0:4
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:result:bool:4:4
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:result_code:int32:8:4
-2024/10/07 00:03:13.646 INFO PduOffset key=hako_msgs/HakoDroneCmdHeader
-2024/10/07 00:03:13.646 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoDroneCmdLand.offset
-2024/10/07 00:03:13.646 INFO PduOffset line=single:struct:header:HakoDroneCmdHeader:0:12
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:height:float64:16:8
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:speed:float64:24:8
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:yaw_deg:float64:32:8
-2024/10/07 00:03:13.646 INFO PduOffset key=hako_msgs/HakoDroneCmdLand
-2024/10/07 00:03:13.646 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoDroneCmdMove.offset
-2024/10/07 00:03:13.646 INFO PduOffset line=single:struct:header:HakoDroneCmdHeader:0:12
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:x:float64:16:8
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:y:float64:24:8
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:z:float64:32:8
-2024/10/07 00:03:13.646 INFO PduOffset line=single:primitive:speed:float64:40:8
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:yaw_deg:float64:48:8
-2024/10/07 00:03:13.647 INFO PduOffset key=hako_msgs/HakoDroneCmdMove
-2024/10/07 00:03:13.647 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoDroneCmdTakeoff.offset
-2024/10/07 00:03:13.647 INFO PduOffset line=single:struct:header:HakoDroneCmdHeader:0:12
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:height:float64:16:8
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:speed:float64:24:8
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:yaw_deg:float64:32:8
-2024/10/07 00:03:13.647 INFO PduOffset key=hako_msgs/HakoDroneCmdTakeoff
-2024/10/07 00:03:13.647 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoStatusMagnetHolder.offset
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:magnet_on:bool:0:4
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:contact_on:bool:4:4
-2024/10/07 00:03:13.647 INFO PduOffset key=hako_msgs/HakoStatusMagnetHolder
-2024/10/07 00:03:13.647 INFO Parse filepath=./ros_types/offset/hako_msgs/ManualPosAttControl.offset
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:do_operation:bool:0:4
-2024/10/07 00:03:13.647 INFO PduOffset line=single:struct:posatt:geometry_msgs/Twist:8:48
-2024/10/07 00:03:13.647 INFO PduOffset key=hako_msgs/ManualPosAttControl
-2024/10/07 00:03:13.647 INFO Parse filepath=./ros_types/offset/hako_msgs/SimpleStructVarray.offset
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:aaa:int32:0:4
-2024/10/07 00:03:13.647 INFO PduOffset line=array:primitive:fixed_str:string:4:256:2
-2024/10/07 00:03:13.647 INFO PduOffset line=varray:primitive:varray_str:string:260:128:8
-2024/10/07 00:03:13.647 INFO PduOffset line=array:struct:fixed_array:SimpleVarray:268:120:5
-2024/10/07 00:03:13.647 INFO PduOffset line=varray:struct:data:SimpleVarray:388:24:8
-2024/10/07 00:03:13.647 INFO PduOffset key=hako_msgs/SimpleStructVarray
-2024/10/07 00:03:13.647 INFO Parse filepath=./ros_types/offset/hako_msgs/SimpleVarray.offset
-2024/10/07 00:03:13.647 INFO PduOffset line=varray:primitive:data:int8:0:1:8
-2024/10/07 00:03:13.647 INFO PduOffset line=array:primitive:fixed_array:int8:8:10:10
-2024/10/07 00:03:13.647 INFO PduOffset line=single:primitive:p_mem1:int32:20:4
-2024/10/07 00:03:13.647 INFO PduOffset key=hako_msgs/SimpleVarray
-2024/10/07 00:03:13.647 INFO package_name=nav_msgs
-2024/10/07 00:03:13.648 INFO tmp_dir=./ros_types/offset/nav_msgs
-2024/10/07 00:03:13.648 INFO filepaths.Length=1
-2024/10/07 00:03:13.648 INFO Parse filepath=./ros_types/offset/nav_msgs/Odometry.offset
-2024/10/07 00:03:13.648 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:child_frame_id:string:136:128
-2024/10/07 00:03:13.648 INFO PduOffset line=single:struct:pose:geometry_msgs/PoseWithCovariance:264:344
-2024/10/07 00:03:13.648 INFO PduOffset line=single:struct:twist:geometry_msgs/TwistWithCovariance:608:336
-2024/10/07 00:03:13.648 INFO PduOffset key=nav_msgs/Odometry
-2024/10/07 00:03:13.648 INFO package_name=pico_msgs
-2024/10/07 00:03:13.648 INFO tmp_dir=./ros_types/offset/pico_msgs
-2024/10/07 00:03:13.648 INFO filepaths.Length=2
-2024/10/07 00:03:13.648 INFO Parse filepath=./ros_types/offset/pico_msgs/LightSensor.offset
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:forward_r:int16:0:2
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:forward_l:int16:2:2
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:left:int16:4:2
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:right:int16:6:2
-2024/10/07 00:03:13.648 INFO PduOffset key=pico_msgs/LightSensor
-2024/10/07 00:03:13.648 INFO Parse filepath=./ros_types/offset/pico_msgs/PicoSensor.offset
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:detect_f:bool:0:4
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:detect_r:bool:4:4
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:detect_l:bool:8:4
-2024/10/07 00:03:13.648 INFO PduOffset line=single:primitive:detect_b:bool:12:4
-2024/10/07 00:03:13.648 INFO PduOffset key=pico_msgs/PicoSensor
-2024/10/07 00:03:13.648 INFO package_name=satelite_msgs
-2024/10/07 00:03:13.648 INFO tmp_dir=./ros_types/offset/satelite_msgs
-2024/10/07 00:03:13.648 INFO filepaths.Length=1
-2024/10/07 00:03:13.648 INFO Parse filepath=./ros_types/offset/satelite_msgs/SateliteImu.offset
-2024/10/07 00:03:13.648 INFO PduOffset line=single:struct:acc:geometry_msgs/Vector3:0:24
-2024/10/07 00:03:13.648 INFO PduOffset line=single:struct:gyro:geometry_msgs/Vector3:24:24
-2024/10/07 00:03:13.648 INFO PduOffset line=single:struct:mag:geometry_msgs/Vector3:48:24
-2024/10/07 00:03:13.648 INFO PduOffset key=satelite_msgs/SateliteImu
-2024/10/07 00:03:13.648 INFO package_name=sensor_msgs
-2024/10/07 00:03:13.649 INFO tmp_dir=./ros_types/offset/sensor_msgs
-2024/10/07 00:03:13.649 INFO filepaths.Length=9
-2024/10/07 00:03:13.649 INFO Parse filepath=./ros_types/offset/sensor_msgs/CameraInfo.offset
-2024/10/07 00:03:13.649 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:height:uint32:136:4
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:width:uint32:140:4
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:distortion_model:string:144:128
-2024/10/07 00:03:13.649 INFO PduOffset line=varray:primitive:d:float64:272:8:8
-2024/10/07 00:03:13.649 INFO PduOffset line=array:primitive:k:float64:280:72:9
-2024/10/07 00:03:13.649 INFO PduOffset line=array:primitive:r:float64:352:72:9
-2024/10/07 00:03:13.649 INFO PduOffset line=array:primitive:p:float64:424:96:12
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:binning_x:uint32:520:4
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:binning_y:uint32:524:4
-2024/10/07 00:03:13.649 INFO PduOffset line=single:struct:roi:RegionOfInterest:528:20
-2024/10/07 00:03:13.649 INFO PduOffset key=sensor_msgs/CameraInfo
-2024/10/07 00:03:13.649 INFO Parse filepath=./ros_types/offset/sensor_msgs/CompressedImage.offset
-2024/10/07 00:03:13.649 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:format:string:136:128
-2024/10/07 00:03:13.649 INFO PduOffset line=varray:primitive:data:uint8:264:1:8
-2024/10/07 00:03:13.649 INFO PduOffset key=sensor_msgs/CompressedImage
-2024/10/07 00:03:13.649 INFO Parse filepath=./ros_types/offset/sensor_msgs/Image.offset
-2024/10/07 00:03:13.649 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:height:uint32:136:4
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:width:uint32:140:4
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:encoding:string:144:128
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:is_bigendian:uint8:272:1
-2024/10/07 00:03:13.649 INFO PduOffset line=single:primitive:step:uint32:276:4
-2024/10/07 00:03:13.649 INFO PduOffset line=varray:primitive:data:uint8:280:1:8
-2024/10/07 00:03:13.649 INFO PduOffset key=sensor_msgs/Image
-2024/10/07 00:03:13.649 INFO Parse filepath=./ros_types/offset/sensor_msgs/Imu.offset
-2024/10/07 00:03:13.649 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.649 INFO PduOffset line=single:struct:orientation:geometry_msgs/Quaternion:136:32
-2024/10/07 00:03:13.649 INFO PduOffset line=array:primitive:orientation_covariance:float64:168:72:9
-2024/10/07 00:03:13.649 INFO PduOffset line=single:struct:angular_velocity:geometry_msgs/Vector3:240:24
-2024/10/07 00:03:13.649 INFO PduOffset line=array:primitive:angular_velocity_covariance:float64:264:72:9
-2024/10/07 00:03:13.649 INFO PduOffset line=single:struct:linear_acceleration:geometry_msgs/Vector3:336:24
-2024/10/07 00:03:13.649 INFO PduOffset line=array:primitive:linear_acceleration_covariance:float64:360:72:9
-2024/10/07 00:03:13.649 INFO PduOffset key=sensor_msgs/Imu
-2024/10/07 00:03:13.649 INFO Parse filepath=./ros_types/offset/sensor_msgs/JointState.offset
-2024/10/07 00:03:13.650 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.650 INFO PduOffset line=varray:primitive:name:string:136:128:8
-2024/10/07 00:03:13.650 INFO PduOffset line=varray:primitive:position:float64:144:8:8
-2024/10/07 00:03:13.650 INFO PduOffset line=varray:primitive:velocity:float64:152:8:8
-2024/10/07 00:03:13.650 INFO PduOffset line=varray:primitive:effort:float64:160:8:8
-2024/10/07 00:03:13.650 INFO PduOffset key=sensor_msgs/JointState
-2024/10/07 00:03:13.650 INFO Parse filepath=./ros_types/offset/sensor_msgs/LaserScan.offset
-2024/10/07 00:03:13.650 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:angle_min:float32:136:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:angle_max:float32:140:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:angle_increment:float32:144:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:time_increment:float32:148:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:scan_time:float32:152:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:range_min:float32:156:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:range_max:float32:160:4
-2024/10/07 00:03:13.650 INFO PduOffset line=varray:primitive:ranges:float32:164:4:8
-2024/10/07 00:03:13.650 INFO PduOffset line=varray:primitive:intensities:float32:172:4:8
-2024/10/07 00:03:13.650 INFO PduOffset key=sensor_msgs/LaserScan
-2024/10/07 00:03:13.650 INFO Parse filepath=./ros_types/offset/sensor_msgs/PointCloud2.offset
-2024/10/07 00:03:13.650 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:height:uint32:136:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:width:uint32:140:4
-2024/10/07 00:03:13.650 INFO PduOffset line=varray:struct:fields:PointField:144:140:8
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:is_bigendian:bool:152:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:point_step:uint32:156:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:row_step:uint32:160:4
-2024/10/07 00:03:13.650 INFO PduOffset line=varray:primitive:data:uint8:164:1:8
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:is_dense:bool:172:4
-2024/10/07 00:03:13.650 INFO PduOffset key=sensor_msgs/PointCloud2
-2024/10/07 00:03:13.650 INFO Parse filepath=./ros_types/offset/sensor_msgs/PointField.offset
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:name:string:0:128
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:offset:uint32:128:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:datatype:uint8:132:1
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:count:uint32:136:4
-2024/10/07 00:03:13.650 INFO PduOffset key=sensor_msgs/PointField
-2024/10/07 00:03:13.650 INFO Parse filepath=./ros_types/offset/sensor_msgs/RegionOfInterest.offset
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:x_offset:uint32:0:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:y_offset:uint32:4:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:height:uint32:8:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:width:uint32:12:4
-2024/10/07 00:03:13.650 INFO PduOffset line=single:primitive:do_rectify:bool:16:4
-2024/10/07 00:03:13.650 INFO PduOffset key=sensor_msgs/RegionOfInterest
-2024/10/07 00:03:13.650 INFO package_name=std_msgs
-2024/10/07 00:03:13.651 INFO tmp_dir=./ros_types/offset/std_msgs
-2024/10/07 00:03:13.651 INFO filepaths.Length=29
-2024/10/07 00:03:13.651 INFO Parse filepath=./ros_types/offset/std_msgs/Bool.offset
-2024/10/07 00:03:13.651 INFO PduOffset line=single:primitive:data:bool:0:4
-2024/10/07 00:03:13.651 INFO PduOffset key=std_msgs/Bool
-2024/10/07 00:03:13.651 INFO Parse filepath=./ros_types/offset/std_msgs/Byte.offset
-2024/10/07 00:03:13.651 INFO PduOffset line=single:struct:data:byte:0:1
-2024/10/07 00:03:13.651 INFO PduOffset key=std_msgs/Byte
-2024/10/07 00:03:13.651 INFO Parse filepath=./ros_types/offset/std_msgs/ByteMultiArray.offset
-2024/10/07 00:03:13.651 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.651 INFO PduOffset line=varray:struct:data:byte:12:1:8
-2024/10/07 00:03:13.651 INFO PduOffset key=std_msgs/ByteMultiArray
-2024/10/07 00:03:13.651 INFO Parse filepath=./ros_types/offset/std_msgs/Char.offset
-2024/10/07 00:03:13.651 INFO PduOffset line=single:struct:data:char:0:1
-2024/10/07 00:03:13.651 INFO PduOffset key=std_msgs/Char
-2024/10/07 00:03:13.651 INFO Parse filepath=./ros_types/offset/std_msgs/ColorRGBA.offset
-2024/10/07 00:03:13.651 INFO PduOffset line=single:primitive:r:float32:0:4
-2024/10/07 00:03:13.651 INFO PduOffset line=single:primitive:g:float32:4:4
-2024/10/07 00:03:13.651 INFO PduOffset line=single:primitive:b:float32:8:4
-2024/10/07 00:03:13.651 INFO PduOffset line=single:primitive:a:float32:12:4
-2024/10/07 00:03:13.651 INFO PduOffset key=std_msgs/ColorRGBA
-2024/10/07 00:03:13.651 INFO Parse filepath=./ros_types/offset/std_msgs/Float32.offset
-2024/10/07 00:03:13.651 INFO PduOffset line=single:primitive:data:float32:0:4
-2024/10/07 00:03:13.651 INFO PduOffset key=std_msgs/Float32
-2024/10/07 00:03:13.651 INFO Parse filepath=./ros_types/offset/std_msgs/Float32MultiArray.offset
-2024/10/07 00:03:13.651 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.651 INFO PduOffset line=varray:primitive:data:float32:12:4:8
-2024/10/07 00:03:13.651 INFO PduOffset key=std_msgs/Float32MultiArray
-2024/10/07 00:03:13.651 INFO Parse filepath=./ros_types/offset/std_msgs/Float64.offset
-2024/10/07 00:03:13.652 INFO PduOffset line=single:primitive:data:float64:0:8
-2024/10/07 00:03:13.652 INFO PduOffset key=std_msgs/Float64
-2024/10/07 00:03:13.652 INFO Parse filepath=./ros_types/offset/std_msgs/Float64MultiArray.offset
-2024/10/07 00:03:13.652 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.652 INFO PduOffset line=varray:primitive:data:float64:12:8:8
-2024/10/07 00:03:13.652 INFO PduOffset key=std_msgs/Float64MultiArray
-2024/10/07 00:03:13.652 INFO Parse filepath=./ros_types/offset/std_msgs/Header.offset
-2024/10/07 00:03:13.652 INFO PduOffset line=single:struct:stamp:builtin_interfaces/Time:0:8
-2024/10/07 00:03:13.652 INFO PduOffset line=single:primitive:frame_id:string:8:128
-2024/10/07 00:03:13.652 INFO PduOffset key=std_msgs/Header
-2024/10/07 00:03:13.652 INFO Parse filepath=./ros_types/offset/std_msgs/Int16.offset
-2024/10/07 00:03:13.652 INFO PduOffset line=single:primitive:data:int16:0:2
-2024/10/07 00:03:13.652 INFO PduOffset key=std_msgs/Int16
-2024/10/07 00:03:13.652 INFO Parse filepath=./ros_types/offset/std_msgs/Int16MultiArray.offset
-2024/10/07 00:03:13.652 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.652 INFO PduOffset line=varray:primitive:data:int16:12:2:8
-2024/10/07 00:03:13.652 INFO PduOffset key=std_msgs/Int16MultiArray
-2024/10/07 00:03:13.652 INFO Parse filepath=./ros_types/offset/std_msgs/Int32.offset
-2024/10/07 00:03:13.652 INFO PduOffset line=single:primitive:data:int32:0:4
-2024/10/07 00:03:13.653 INFO PduOffset key=std_msgs/Int32
-2024/10/07 00:03:13.653 INFO Parse filepath=./ros_types/offset/std_msgs/Int32MultiArray.offset
-2024/10/07 00:03:13.653 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.653 INFO PduOffset line=varray:primitive:data:int32:12:4:8
-2024/10/07 00:03:13.653 INFO PduOffset key=std_msgs/Int32MultiArray
-2024/10/07 00:03:13.653 INFO Parse filepath=./ros_types/offset/std_msgs/Int64.offset
-2024/10/07 00:03:13.653 INFO PduOffset line=single:primitive:data:int64:0:8
-2024/10/07 00:03:13.653 INFO PduOffset key=std_msgs/Int64
-2024/10/07 00:03:13.653 INFO Parse filepath=./ros_types/offset/std_msgs/Int64MultiArray.offset
-2024/10/07 00:03:13.653 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.653 INFO PduOffset line=varray:primitive:data:int64:12:8:8
-2024/10/07 00:03:13.653 INFO PduOffset key=std_msgs/Int64MultiArray
-2024/10/07 00:03:13.653 INFO Parse filepath=./ros_types/offset/std_msgs/Int8.offset
-2024/10/07 00:03:13.653 INFO PduOffset line=single:primitive:data:int8:0:1
-2024/10/07 00:03:13.653 INFO PduOffset key=std_msgs/Int8
-2024/10/07 00:03:13.653 INFO Parse filepath=./ros_types/offset/std_msgs/Int8MultiArray.offset
-2024/10/07 00:03:13.653 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.653 INFO PduOffset line=varray:primitive:data:int8:12:1:8
-2024/10/07 00:03:13.653 INFO PduOffset key=std_msgs/Int8MultiArray
-2024/10/07 00:03:13.653 INFO Parse filepath=./ros_types/offset/std_msgs/MultiArrayDimension.offset
-2024/10/07 00:03:13.654 INFO PduOffset line=single:primitive:label:string:0:128
-2024/10/07 00:03:13.654 INFO PduOffset line=single:primitive:size:uint32:128:4
-2024/10/07 00:03:13.654 INFO PduOffset line=single:primitive:stride:uint32:132:4
-2024/10/07 00:03:13.654 INFO PduOffset key=std_msgs/MultiArrayDimension
-2024/10/07 00:03:13.654 INFO Parse filepath=./ros_types/offset/std_msgs/MultiArrayLayout.offset
-2024/10/07 00:03:13.654 INFO PduOffset line=varray:struct:dim:MultiArrayDimension:0:136:8
-2024/10/07 00:03:13.654 INFO PduOffset line=single:primitive:data_offset:uint32:8:4
-2024/10/07 00:03:13.654 INFO PduOffset key=std_msgs/MultiArrayLayout
-2024/10/07 00:03:13.654 INFO Parse filepath=./ros_types/offset/std_msgs/String.offset
-2024/10/07 00:03:13.654 INFO PduOffset line=single:primitive:data:string:0:128
-2024/10/07 00:03:13.654 INFO PduOffset key=std_msgs/String
-2024/10/07 00:03:13.654 INFO Parse filepath=./ros_types/offset/std_msgs/UInt16.offset
-2024/10/07 00:03:13.654 INFO PduOffset line=single:primitive:data:uint16:0:2
-2024/10/07 00:03:13.654 INFO PduOffset key=std_msgs/UInt16
-2024/10/07 00:03:13.654 INFO Parse filepath=./ros_types/offset/std_msgs/UInt16MultiArray.offset
-2024/10/07 00:03:13.654 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.654 INFO PduOffset line=varray:primitive:data:uint16:12:2:8
-2024/10/07 00:03:13.654 INFO PduOffset key=std_msgs/UInt16MultiArray
-2024/10/07 00:03:13.654 INFO Parse filepath=./ros_types/offset/std_msgs/UInt32.offset
-2024/10/07 00:03:13.654 INFO PduOffset line=single:primitive:data:uint32:0:4
-2024/10/07 00:03:13.655 INFO PduOffset key=std_msgs/UInt32
-2024/10/07 00:03:13.655 INFO Parse filepath=./ros_types/offset/std_msgs/UInt32MultiArray.offset
-2024/10/07 00:03:13.655 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.655 INFO PduOffset line=varray:primitive:data:uint32:12:4:8
-2024/10/07 00:03:13.655 INFO PduOffset key=std_msgs/UInt32MultiArray
-2024/10/07 00:03:13.655 INFO Parse filepath=./ros_types/offset/std_msgs/UInt64.offset
-2024/10/07 00:03:13.655 INFO PduOffset line=single:primitive:data:uint64:0:8
-2024/10/07 00:03:13.655 INFO PduOffset key=std_msgs/UInt64
-2024/10/07 00:03:13.655 INFO Parse filepath=./ros_types/offset/std_msgs/UInt64MultiArray.offset
-2024/10/07 00:03:13.655 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.655 INFO PduOffset line=varray:primitive:data:uint64:12:8:8
-2024/10/07 00:03:13.655 INFO PduOffset key=std_msgs/UInt64MultiArray
-2024/10/07 00:03:13.655 INFO Parse filepath=./ros_types/offset/std_msgs/UInt8.offset
-2024/10/07 00:03:13.655 INFO PduOffset line=single:primitive:data:uint8:0:1
-2024/10/07 00:03:13.655 INFO PduOffset key=std_msgs/UInt8
-2024/10/07 00:03:13.655 INFO Parse filepath=./ros_types/offset/std_msgs/UInt8MultiArray.offset
-2024/10/07 00:03:13.655 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
-2024/10/07 00:03:13.655 INFO PduOffset line=varray:primitive:data:uint8:12:1:8
-2024/10/07 00:03:13.655 INFO PduOffset key=std_msgs/UInt8MultiArray
-2024/10/07 00:03:13.655 INFO package_name=tf2_msgs
-2024/10/07 00:03:13.655 INFO tmp_dir=./ros_types/offset/tf2_msgs
-2024/10/07 00:03:13.655 INFO filepaths.Length=1
-2024/10/07 00:03:13.655 INFO Parse filepath=./ros_types/offset/tf2_msgs/TFMessage.offset
-2024/10/07 00:03:13.656 INFO PduOffset line=varray:struct:transforms:geometry_msgs/TransformStamped:0:320:8
-2024/10/07 00:03:13.656 INFO PduOffset key=tf2_msgs/TFMessage
+2024/10/21 22:55:17.803 DEBUG RobotControllerTest :pdu io connect add writer:RobotControllerTest_cmd_velPdu
+2024/10/21 22:55:17.803 DEBUG PduIoConnector AddWriter: RobotControllerTest_cmd_velPdu
+2024/10/21 22:55:17.803 DEBUG Button pdu io connect add reader:Button_button_sensorPdu
+2024/10/21 22:55:17.803 DEBUG RobotController :pdu io connect add writer:RobotController_cmd_velPdu
+2024/10/21 22:55:17.803 DEBUG PduIoConnector AddWriter: RobotController_cmd_velPdu
+2024/10/21 22:55:17.803 DEBUG CameraTransmiter :pdu io connect add writer:CameraTransmiter_pose_dataPdu
+2024/10/21 22:55:17.803 DEBUG PduIoConnector AddWriter: CameraTransmiter_pose_dataPdu
+2024/10/21 22:55:17.803 DEBUG SampleRobot :pdu io connect add writer:SampleRobot_touch_sensorPdu
+2024/10/21 22:55:17.803 DEBUG PduIoConnector AddWriter: SampleRobot_touch_sensorPdu
+2024/10/21 22:55:17.803 DEBUG SampleRobot :pdu io connect add writer:SampleRobot_camera_image_jpgPdu
+2024/10/21 22:55:17.803 DEBUG PduIoConnector AddWriter: SampleRobot_camera_image_jpgPdu
+2024/10/21 22:55:17.803 DEBUG SampleRobot :pdu io connect add writer:SampleRobot_scanPdu
+2024/10/21 22:55:17.803 DEBUG PduIoConnector AddWriter: SampleRobot_scanPdu
+2024/10/21 22:55:17.803 DEBUG SampleRobot pdu io connect add reader:SampleRobot_cmd_velPdu
+2024/10/21 22:55:17.803 DEBUG Camera pdu io connect add reader:Camera_pose_dataPdu
+2024/10/21 22:55:17.808 INFO ParseAll() package_dirs=./ros_types/offset
+2024/10/21 22:55:17.808 INFO package_name=builtin_interfaces
+2024/10/21 22:55:17.808 INFO tmp_dir=./ros_types/offset/builtin_interfaces
+2024/10/21 22:55:17.808 INFO filepaths.Length=1
+2024/10/21 22:55:17.808 INFO Parse filepath=./ros_types/offset/builtin_interfaces/Time.offset
+2024/10/21 22:55:17.809 INFO PduOffset line=single:primitive:sec:int32:0:4
+2024/10/21 22:55:17.809 INFO PduOffset line=single:primitive:nanosec:uint32:4:4
+2024/10/21 22:55:17.810 INFO PduOffset key=builtin_interfaces/Time
+2024/10/21 22:55:17.810 INFO package_name=can_msgs
+2024/10/21 22:55:17.810 INFO tmp_dir=./ros_types/offset/can_msgs
+2024/10/21 22:55:17.810 INFO filepaths.Length=3
+2024/10/21 22:55:17.810 INFO Parse filepath=./ros_types/offset/can_msgs/HakoCan.offset
+2024/10/21 22:55:17.810 INFO PduOffset line=single:struct:head:HakoCanHead:0:20
+2024/10/21 22:55:17.810 INFO PduOffset line=single:struct:body:HakoCanBody:20:8
+2024/10/21 22:55:17.810 INFO PduOffset key=can_msgs/HakoCan
+2024/10/21 22:55:17.810 INFO Parse filepath=./ros_types/offset/can_msgs/HakoCanBody.offset
+2024/10/21 22:55:17.810 INFO PduOffset line=array:primitive:data:uint8:0:8:8
+2024/10/21 22:55:17.810 INFO PduOffset key=can_msgs/HakoCanBody
+2024/10/21 22:55:17.810 INFO Parse filepath=./ros_types/offset/can_msgs/HakoCanHead.offset
+2024/10/21 22:55:17.811 INFO PduOffset line=single:primitive:channel:uint32:0:4
+2024/10/21 22:55:17.811 INFO PduOffset line=single:primitive:ide:uint32:4:4
+2024/10/21 22:55:17.811 INFO PduOffset line=single:primitive:rtr:uint32:8:4
+2024/10/21 22:55:17.811 INFO PduOffset line=single:primitive:dlc:uint32:12:4
+2024/10/21 22:55:17.811 INFO PduOffset line=single:primitive:canid:uint32:16:4
+2024/10/21 22:55:17.811 INFO PduOffset key=can_msgs/HakoCanHead
+2024/10/21 22:55:17.811 INFO package_name=ev3_msgs
+2024/10/21 22:55:17.811 INFO tmp_dir=./ros_types/offset/ev3_msgs
+2024/10/21 22:55:17.811 INFO filepaths.Length=7
+2024/10/21 22:55:17.811 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduActuator.offset
+2024/10/21 22:55:17.811 INFO PduOffset line=single:struct:head:Ev3PduActuatorHeader:0:152
+2024/10/21 22:55:17.811 INFO PduOffset line=array:primitive:leds:uint8:152:1:1
+2024/10/21 22:55:17.811 INFO PduOffset line=array:struct:motors:Ev3PduMotor:156:36:3
+2024/10/21 22:55:17.811 INFO PduOffset line=single:primitive:gyro_reset:uint32:192:4
+2024/10/21 22:55:17.811 INFO PduOffset key=ev3_msgs/Ev3PduActuator
+2024/10/21 22:55:17.811 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduActuatorHeader.offset
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:name:string:0:128
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:version:uint32:128:4
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:asset_time:int64:136:8
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:ext_off:uint32:144:4
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:ext_size:uint32:148:4
+2024/10/21 22:55:17.812 INFO PduOffset key=ev3_msgs/Ev3PduActuatorHeader
+2024/10/21 22:55:17.812 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduColorSensor.offset
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:color:uint32:0:4
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:reflect:uint32:4:4
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:rgb_r:uint32:8:4
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:rgb_g:uint32:12:4
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:rgb_b:uint32:16:4
+2024/10/21 22:55:17.812 INFO PduOffset key=ev3_msgs/Ev3PduColorSensor
+2024/10/21 22:55:17.812 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduMotor.offset
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:power:int32:0:4
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:stop:uint32:4:4
+2024/10/21 22:55:17.812 INFO PduOffset line=single:primitive:reset_angle:uint32:8:4
+2024/10/21 22:55:17.812 INFO PduOffset key=ev3_msgs/Ev3PduMotor
+2024/10/21 22:55:17.812 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduSensor.offset
+2024/10/21 22:55:17.813 INFO PduOffset line=single:struct:head:Ev3PduSensorHeader:0:152
+2024/10/21 22:55:17.813 INFO PduOffset line=array:primitive:buttons:uint8:152:1:1
+2024/10/21 22:55:17.813 INFO PduOffset line=array:struct:color_sensors:Ev3PduColorSensor:156:40:2
+2024/10/21 22:55:17.813 INFO PduOffset line=array:struct:touch_sensors:Ev3PduTouchSensor:196:8:2
+2024/10/21 22:55:17.813 INFO PduOffset line=array:primitive:motor_angle:uint32:204:12:3
+2024/10/21 22:55:17.813 INFO PduOffset line=single:primitive:gyro_degree:int32:216:4
+2024/10/21 22:55:17.817 INFO PduOffset line=single:primitive:gyro_degree_rate:int32:220:4
+2024/10/21 22:55:17.817 INFO PduOffset line=single:primitive:sensor_ultrasonic:uint32:224:4
+2024/10/21 22:55:17.817 INFO PduOffset line=single:primitive:gps_lat:float64:232:8
+2024/10/21 22:55:17.817 INFO PduOffset line=single:primitive:gps_lon:float64:240:8
+2024/10/21 22:55:17.817 INFO PduOffset key=ev3_msgs/Ev3PduSensor
+2024/10/21 22:55:17.817 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduSensorHeader.offset
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:name:string:0:128
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:version:uint32:128:4
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:hakoniwa_time:int64:136:8
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:ext_off:uint32:144:4
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:ext_size:uint32:148:4
+2024/10/21 22:55:17.818 INFO PduOffset key=ev3_msgs/Ev3PduSensorHeader
+2024/10/21 22:55:17.818 INFO Parse filepath=./ros_types/offset/ev3_msgs/Ev3PduTouchSensor.offset
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:value:uint32:0:4
+2024/10/21 22:55:17.818 INFO PduOffset key=ev3_msgs/Ev3PduTouchSensor
+2024/10/21 22:55:17.818 INFO package_name=geometry_msgs
+2024/10/21 22:55:17.818 INFO tmp_dir=./ros_types/offset/geometry_msgs
+2024/10/21 22:55:17.818 INFO filepaths.Length=9
+2024/10/21 22:55:17.818 INFO Parse filepath=./ros_types/offset/geometry_msgs/Point.offset
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:x:float64:0:8
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:y:float64:8:8
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:z:float64:16:8
+2024/10/21 22:55:17.818 INFO PduOffset key=geometry_msgs/Point
+2024/10/21 22:55:17.818 INFO Parse filepath=./ros_types/offset/geometry_msgs/Pose.offset
+2024/10/21 22:55:17.818 INFO PduOffset line=single:struct:position:Point:0:24
+2024/10/21 22:55:17.818 INFO PduOffset line=single:struct:orientation:Quaternion:24:32
+2024/10/21 22:55:17.818 INFO PduOffset key=geometry_msgs/Pose
+2024/10/21 22:55:17.818 INFO Parse filepath=./ros_types/offset/geometry_msgs/PoseWithCovariance.offset
+2024/10/21 22:55:17.818 INFO PduOffset line=single:struct:pose:Pose:0:56
+2024/10/21 22:55:17.818 INFO PduOffset line=array:primitive:covariance:float64:56:288:36
+2024/10/21 22:55:17.818 INFO PduOffset key=geometry_msgs/PoseWithCovariance
+2024/10/21 22:55:17.818 INFO Parse filepath=./ros_types/offset/geometry_msgs/Quaternion.offset
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:x:float64:0:8
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:y:float64:8:8
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:z:float64:16:8
+2024/10/21 22:55:17.818 INFO PduOffset line=single:primitive:w:float64:24:8
+2024/10/21 22:55:17.818 INFO PduOffset key=geometry_msgs/Quaternion
+2024/10/21 22:55:17.818 INFO Parse filepath=./ros_types/offset/geometry_msgs/Transform.offset
+2024/10/21 22:55:17.818 INFO PduOffset line=single:struct:translation:Vector3:0:24
+2024/10/21 22:55:17.818 INFO PduOffset line=single:struct:rotation:Quaternion:24:32
+2024/10/21 22:55:17.818 INFO PduOffset key=geometry_msgs/Transform
+2024/10/21 22:55:17.818 INFO Parse filepath=./ros_types/offset/geometry_msgs/TransformStamped.offset
+2024/10/21 22:55:17.819 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.819 INFO PduOffset line=single:primitive:child_frame_id:string:136:128
+2024/10/21 22:55:17.819 INFO PduOffset line=single:struct:transform:Transform:264:56
+2024/10/21 22:55:17.819 INFO PduOffset key=geometry_msgs/TransformStamped
+2024/10/21 22:55:17.819 INFO Parse filepath=./ros_types/offset/geometry_msgs/Twist.offset
+2024/10/21 22:55:17.819 INFO PduOffset line=single:struct:linear:Vector3:0:24
+2024/10/21 22:55:17.819 INFO PduOffset line=single:struct:angular:Vector3:24:24
+2024/10/21 22:55:17.819 INFO PduOffset key=geometry_msgs/Twist
+2024/10/21 22:55:17.819 INFO Parse filepath=./ros_types/offset/geometry_msgs/TwistWithCovariance.offset
+2024/10/21 22:55:17.819 INFO PduOffset line=single:struct:twist:Twist:0:48
+2024/10/21 22:55:17.819 INFO PduOffset line=array:primitive:covariance:float64:48:288:36
+2024/10/21 22:55:17.819 INFO PduOffset key=geometry_msgs/TwistWithCovariance
+2024/10/21 22:55:17.819 INFO Parse filepath=./ros_types/offset/geometry_msgs/Vector3.offset
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:x:float64:0:8
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:y:float64:8:8
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:z:float64:16:8
+2024/10/21 22:55:17.820 INFO PduOffset key=geometry_msgs/Vector3
+2024/10/21 22:55:17.820 INFO package_name=hako_mavlink_msgs
+2024/10/21 22:55:17.820 INFO tmp_dir=./ros_types/offset/hako_mavlink_msgs
+2024/10/21 22:55:17.820 INFO filepaths.Length=4
+2024/10/21 22:55:17.820 INFO Parse filepath=./ros_types/offset/hako_mavlink_msgs/HakoHilActuatorControls.offset
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:time_usec:uint64:0:8
+2024/10/21 22:55:17.820 INFO PduOffset line=array:primitive:controls:float32:8:64:16
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:mode:uint8:72:1
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:flags:uint64:80:8
+2024/10/21 22:55:17.820 INFO PduOffset key=hako_mavlink_msgs/HakoHilActuatorControls
+2024/10/21 22:55:17.820 INFO Parse filepath=./ros_types/offset/hako_mavlink_msgs/HakoHilGps.offset
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:time_usec:uint64:0:8
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:lat:int32:8:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:lon:int32:12:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:alt:int32:16:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:eph:uint16:20:2
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:epv:uint16:22:2
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:vel:uint16:24:2
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:vn:int16:26:2
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:ve:int16:28:2
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:vd:int16:30:2
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:cog:uint16:32:2
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:satellites_visible:uint8:34:1
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:id:uint8:35:1
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:yaw:uint8:36:1
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:fix_type:uint8:37:1
+2024/10/21 22:55:17.820 INFO PduOffset key=hako_mavlink_msgs/HakoHilGps
+2024/10/21 22:55:17.820 INFO Parse filepath=./ros_types/offset/hako_mavlink_msgs/HakoHilSensor.offset
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:time_usec:uint64:0:8
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:xacc:float32:8:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:yacc:float32:12:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:zacc:float32:16:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:xgyro:float32:20:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:ygyro:float32:24:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:zgyro:float32:28:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:xmag:float32:32:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:ymag:float32:36:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:zmag:float32:40:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:abs_pressure:float32:44:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:diff_pressure:float32:48:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:pressure_alt:float32:52:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:temperature:float32:56:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:fields_updated:uint32:60:4
+2024/10/21 22:55:17.820 INFO PduOffset line=single:primitive:id:uint8:64:1
+2024/10/21 22:55:17.820 INFO PduOffset key=hako_mavlink_msgs/HakoHilSensor
+2024/10/21 22:55:17.820 INFO Parse filepath=./ros_types/offset/hako_mavlink_msgs/HakoHilStateQuaternion.offset
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:time_usec:uint64:0:8
+2024/10/21 22:55:17.821 INFO PduOffset line=array:primitive:attitude_quaternion:float32:8:16:4
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:rollspeed:float32:24:4
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:pitchspeed:float32:28:4
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:yawspeed:float32:32:4
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:lat:int32:36:4
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:lon:int32:40:4
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:alt:int32:44:4
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:vx:int16:48:2
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:vy:int16:50:2
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:vz:int16:52:2
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:ind_airspeed:uint16:54:2
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:true_airspeed:uint16:56:2
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:xacc:int16:58:2
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:yacc:int16:60:2
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:zacc:int16:62:2
+2024/10/21 22:55:17.821 INFO PduOffset key=hako_mavlink_msgs/HakoHilStateQuaternion
+2024/10/21 22:55:17.821 INFO package_name=hako_msgs
+2024/10/21 22:55:17.821 INFO tmp_dir=./ros_types/offset/hako_msgs
+2024/10/21 22:55:17.821 INFO filepaths.Length=18
+2024/10/21 22:55:17.821 INFO Parse filepath=./ros_types/offset/hako_msgs/Collision.offset
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:collision:bool:0:4
+2024/10/21 22:55:17.821 INFO PduOffset line=single:primitive:contact_num:uint32:4:4
+2024/10/21 22:55:17.822 INFO PduOffset line=single:struct:relative_velocity:geometry_msgs/Vector3:8:24
+2024/10/21 22:55:17.822 INFO PduOffset line=array:struct:contact_position:geometry_msgs/Point:32:240:10
+2024/10/21 22:55:17.822 INFO PduOffset line=single:primitive:restitution_coefficient:float64:272:8
+2024/10/21 22:55:17.822 INFO PduOffset key=hako_msgs/Collision
+2024/10/21 22:55:17.822 INFO Parse filepath=./ros_types/offset/hako_msgs/Disturbance.offset
+2024/10/21 22:55:17.822 INFO PduOffset line=single:struct:d_temp:hako_msgs/DisturbanceTemperature:0:8
+2024/10/21 22:55:17.822 INFO PduOffset key=hako_msgs/Disturbance
+2024/10/21 22:55:17.822 INFO Parse filepath=./ros_types/offset/hako_msgs/DisturbanceTemperature.offset
+2024/10/21 22:55:17.822 INFO PduOffset line=single:primitive:value:float64:0:8
+2024/10/21 22:55:17.822 INFO PduOffset key=hako_msgs/DisturbanceTemperature
+2024/10/21 22:55:17.822 INFO Parse filepath=./ros_types/offset/hako_msgs/GameControllerOperation.offset
+2024/10/21 22:55:17.822 INFO PduOffset line=array:primitive:axis:float64:0:48:6
+2024/10/21 22:55:17.822 INFO PduOffset line=array:primitive:button:bool:48:60:15
+2024/10/21 22:55:17.822 INFO PduOffset key=hako_msgs/GameControllerOperation
+2024/10/21 22:55:17.822 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCameraData.offset
+2024/10/21 22:55:17.822 INFO PduOffset line=single:primitive:request_id:int32:0:4
+2024/10/21 22:55:17.822 INFO PduOffset line=single:struct:image:sensor_msgs/CompressedImage:4:272
+2024/10/21 22:55:17.822 INFO PduOffset key=hako_msgs/HakoCameraData
+2024/10/21 22:55:17.822 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCameraInfo.offset
+2024/10/21 22:55:17.822 INFO PduOffset line=single:primitive:request_id:int32:0:4
+2024/10/21 22:55:17.822 INFO PduOffset line=single:struct:angle:geometry_msgs/Vector3:8:24
+2024/10/21 22:55:17.822 INFO PduOffset key=hako_msgs/HakoCameraInfo
+2024/10/21 22:55:17.822 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCmdCamera.offset
+2024/10/21 22:55:17.823 INFO PduOffset line=single:struct:header:HakoCmdHeader:0:12
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:request_id:int32:12:4
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:encode_type:int32:16:4
+2024/10/21 22:55:17.823 INFO PduOffset key=hako_msgs/HakoCmdCamera
+2024/10/21 22:55:17.823 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCmdCameraMove.offset
+2024/10/21 22:55:17.823 INFO PduOffset line=single:struct:header:HakoCmdHeader:0:12
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:request_id:int32:12:4
+2024/10/21 22:55:17.823 INFO PduOffset line=single:struct:angle:geometry_msgs/Vector3:16:24
+2024/10/21 22:55:17.823 INFO PduOffset key=hako_msgs/HakoCmdCameraMove
+2024/10/21 22:55:17.823 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCmdHeader.offset
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:request:bool:0:4
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:result:bool:4:4
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:result_code:int32:8:4
+2024/10/21 22:55:17.823 INFO PduOffset key=hako_msgs/HakoCmdHeader
+2024/10/21 22:55:17.823 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoCmdMagnetHolder.offset
+2024/10/21 22:55:17.823 INFO PduOffset line=single:struct:header:HakoCmdHeader:0:12
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:magnet_on:bool:12:4
+2024/10/21 22:55:17.823 INFO PduOffset key=hako_msgs/HakoCmdMagnetHolder
+2024/10/21 22:55:17.823 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoDroneCmdHeader.offset
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:request:bool:0:4
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:result:bool:4:4
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:result_code:int32:8:4
+2024/10/21 22:55:17.823 INFO PduOffset key=hako_msgs/HakoDroneCmdHeader
+2024/10/21 22:55:17.823 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoDroneCmdLand.offset
+2024/10/21 22:55:17.823 INFO PduOffset line=single:struct:header:HakoDroneCmdHeader:0:12
+2024/10/21 22:55:17.823 INFO PduOffset line=single:primitive:height:float64:16:8
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:speed:float64:24:8
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:yaw_deg:float64:32:8
+2024/10/21 22:55:17.824 INFO PduOffset key=hako_msgs/HakoDroneCmdLand
+2024/10/21 22:55:17.824 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoDroneCmdMove.offset
+2024/10/21 22:55:17.824 INFO PduOffset line=single:struct:header:HakoDroneCmdHeader:0:12
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:x:float64:16:8
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:y:float64:24:8
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:z:float64:32:8
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:speed:float64:40:8
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:yaw_deg:float64:48:8
+2024/10/21 22:55:17.824 INFO PduOffset key=hako_msgs/HakoDroneCmdMove
+2024/10/21 22:55:17.824 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoDroneCmdTakeoff.offset
+2024/10/21 22:55:17.824 INFO PduOffset line=single:struct:header:HakoDroneCmdHeader:0:12
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:height:float64:16:8
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:speed:float64:24:8
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:yaw_deg:float64:32:8
+2024/10/21 22:55:17.824 INFO PduOffset key=hako_msgs/HakoDroneCmdTakeoff
+2024/10/21 22:55:17.824 INFO Parse filepath=./ros_types/offset/hako_msgs/HakoStatusMagnetHolder.offset
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:magnet_on:bool:0:4
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:contact_on:bool:4:4
+2024/10/21 22:55:17.824 INFO PduOffset key=hako_msgs/HakoStatusMagnetHolder
+2024/10/21 22:55:17.824 INFO Parse filepath=./ros_types/offset/hako_msgs/ManualPosAttControl.offset
+2024/10/21 22:55:17.824 INFO PduOffset line=single:primitive:do_operation:bool:0:4
+2024/10/21 22:55:17.825 INFO PduOffset line=single:struct:posatt:geometry_msgs/Twist:8:48
+2024/10/21 22:55:17.825 INFO PduOffset key=hako_msgs/ManualPosAttControl
+2024/10/21 22:55:17.825 INFO Parse filepath=./ros_types/offset/hako_msgs/SimpleStructVarray.offset
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:aaa:int32:0:4
+2024/10/21 22:55:17.825 INFO PduOffset line=array:primitive:fixed_str:string:4:256:2
+2024/10/21 22:55:17.825 INFO PduOffset line=varray:primitive:varray_str:string:260:128:8
+2024/10/21 22:55:17.825 INFO PduOffset line=array:struct:fixed_array:SimpleVarray:268:120:5
+2024/10/21 22:55:17.825 INFO PduOffset line=varray:struct:data:SimpleVarray:388:24:8
+2024/10/21 22:55:17.825 INFO PduOffset key=hako_msgs/SimpleStructVarray
+2024/10/21 22:55:17.825 INFO Parse filepath=./ros_types/offset/hako_msgs/SimpleVarray.offset
+2024/10/21 22:55:17.825 INFO PduOffset line=varray:primitive:data:int8:0:1:8
+2024/10/21 22:55:17.825 INFO PduOffset line=array:primitive:fixed_array:int8:8:10:10
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:p_mem1:int32:20:4
+2024/10/21 22:55:17.825 INFO PduOffset key=hako_msgs/SimpleVarray
+2024/10/21 22:55:17.825 INFO package_name=nav_msgs
+2024/10/21 22:55:17.825 INFO tmp_dir=./ros_types/offset/nav_msgs
+2024/10/21 22:55:17.825 INFO filepaths.Length=1
+2024/10/21 22:55:17.825 INFO Parse filepath=./ros_types/offset/nav_msgs/Odometry.offset
+2024/10/21 22:55:17.825 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:child_frame_id:string:136:128
+2024/10/21 22:55:17.825 INFO PduOffset line=single:struct:pose:geometry_msgs/PoseWithCovariance:264:344
+2024/10/21 22:55:17.825 INFO PduOffset line=single:struct:twist:geometry_msgs/TwistWithCovariance:608:336
+2024/10/21 22:55:17.825 INFO PduOffset key=nav_msgs/Odometry
+2024/10/21 22:55:17.825 INFO package_name=pico_msgs
+2024/10/21 22:55:17.825 INFO tmp_dir=./ros_types/offset/pico_msgs
+2024/10/21 22:55:17.825 INFO filepaths.Length=2
+2024/10/21 22:55:17.825 INFO Parse filepath=./ros_types/offset/pico_msgs/LightSensor.offset
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:forward_r:int16:0:2
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:forward_l:int16:2:2
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:left:int16:4:2
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:right:int16:6:2
+2024/10/21 22:55:17.825 INFO PduOffset key=pico_msgs/LightSensor
+2024/10/21 22:55:17.825 INFO Parse filepath=./ros_types/offset/pico_msgs/PicoSensor.offset
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:detect_f:bool:0:4
+2024/10/21 22:55:17.825 INFO PduOffset line=single:primitive:detect_r:bool:4:4
+2024/10/21 22:55:17.826 INFO PduOffset line=single:primitive:detect_l:bool:8:4
+2024/10/21 22:55:17.826 INFO PduOffset line=single:primitive:detect_b:bool:12:4
+2024/10/21 22:55:17.826 INFO PduOffset key=pico_msgs/PicoSensor
+2024/10/21 22:55:17.826 INFO package_name=satelite_msgs
+2024/10/21 22:55:17.826 INFO tmp_dir=./ros_types/offset/satelite_msgs
+2024/10/21 22:55:17.826 INFO filepaths.Length=1
+2024/10/21 22:55:17.826 INFO Parse filepath=./ros_types/offset/satelite_msgs/SateliteImu.offset
+2024/10/21 22:55:17.826 INFO PduOffset line=single:struct:acc:geometry_msgs/Vector3:0:24
+2024/10/21 22:55:17.826 INFO PduOffset line=single:struct:gyro:geometry_msgs/Vector3:24:24
+2024/10/21 22:55:17.826 INFO PduOffset line=single:struct:mag:geometry_msgs/Vector3:48:24
+2024/10/21 22:55:17.826 INFO PduOffset key=satelite_msgs/SateliteImu
+2024/10/21 22:55:17.826 INFO package_name=sensor_msgs
+2024/10/21 22:55:17.826 INFO tmp_dir=./ros_types/offset/sensor_msgs
+2024/10/21 22:55:17.826 INFO filepaths.Length=9
+2024/10/21 22:55:17.826 INFO Parse filepath=./ros_types/offset/sensor_msgs/CameraInfo.offset
+2024/10/21 22:55:17.826 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.826 INFO PduOffset line=single:primitive:height:uint32:136:4
+2024/10/21 22:55:17.826 INFO PduOffset line=single:primitive:width:uint32:140:4
+2024/10/21 22:55:17.826 INFO PduOffset line=single:primitive:distortion_model:string:144:128
+2024/10/21 22:55:17.826 INFO PduOffset line=varray:primitive:d:float64:272:8:8
+2024/10/21 22:55:17.826 INFO PduOffset line=array:primitive:k:float64:280:72:9
+2024/10/21 22:55:17.826 INFO PduOffset line=array:primitive:r:float64:352:72:9
+2024/10/21 22:55:17.826 INFO PduOffset line=array:primitive:p:float64:424:96:12
+2024/10/21 22:55:17.826 INFO PduOffset line=single:primitive:binning_x:uint32:520:4
+2024/10/21 22:55:17.826 INFO PduOffset line=single:primitive:binning_y:uint32:524:4
+2024/10/21 22:55:17.826 INFO PduOffset line=single:struct:roi:RegionOfInterest:528:20
+2024/10/21 22:55:17.826 INFO PduOffset key=sensor_msgs/CameraInfo
+2024/10/21 22:55:17.826 INFO Parse filepath=./ros_types/offset/sensor_msgs/CompressedImage.offset
+2024/10/21 22:55:17.826 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.826 INFO PduOffset line=single:primitive:format:string:136:128
+2024/10/21 22:55:17.826 INFO PduOffset line=varray:primitive:data:uint8:264:1:8
+2024/10/21 22:55:17.826 INFO PduOffset key=sensor_msgs/CompressedImage
+2024/10/21 22:55:17.826 INFO Parse filepath=./ros_types/offset/sensor_msgs/Image.offset
+2024/10/21 22:55:17.827 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:height:uint32:136:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:width:uint32:140:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:encoding:string:144:128
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:is_bigendian:uint8:272:1
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:step:uint32:276:4
+2024/10/21 22:55:17.827 INFO PduOffset line=varray:primitive:data:uint8:280:1:8
+2024/10/21 22:55:17.827 INFO PduOffset key=sensor_msgs/Image
+2024/10/21 22:55:17.827 INFO Parse filepath=./ros_types/offset/sensor_msgs/Imu.offset
+2024/10/21 22:55:17.827 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.827 INFO PduOffset line=single:struct:orientation:geometry_msgs/Quaternion:136:32
+2024/10/21 22:55:17.827 INFO PduOffset line=array:primitive:orientation_covariance:float64:168:72:9
+2024/10/21 22:55:17.827 INFO PduOffset line=single:struct:angular_velocity:geometry_msgs/Vector3:240:24
+2024/10/21 22:55:17.827 INFO PduOffset line=array:primitive:angular_velocity_covariance:float64:264:72:9
+2024/10/21 22:55:17.827 INFO PduOffset line=single:struct:linear_acceleration:geometry_msgs/Vector3:336:24
+2024/10/21 22:55:17.827 INFO PduOffset line=array:primitive:linear_acceleration_covariance:float64:360:72:9
+2024/10/21 22:55:17.827 INFO PduOffset key=sensor_msgs/Imu
+2024/10/21 22:55:17.827 INFO Parse filepath=./ros_types/offset/sensor_msgs/JointState.offset
+2024/10/21 22:55:17.827 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.827 INFO PduOffset line=varray:primitive:name:string:136:128:8
+2024/10/21 22:55:17.827 INFO PduOffset line=varray:primitive:position:float64:144:8:8
+2024/10/21 22:55:17.827 INFO PduOffset line=varray:primitive:velocity:float64:152:8:8
+2024/10/21 22:55:17.827 INFO PduOffset line=varray:primitive:effort:float64:160:8:8
+2024/10/21 22:55:17.827 INFO PduOffset key=sensor_msgs/JointState
+2024/10/21 22:55:17.827 INFO Parse filepath=./ros_types/offset/sensor_msgs/LaserScan.offset
+2024/10/21 22:55:17.827 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:angle_min:float32:136:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:angle_max:float32:140:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:angle_increment:float32:144:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:time_increment:float32:148:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:scan_time:float32:152:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:range_min:float32:156:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:range_max:float32:160:4
+2024/10/21 22:55:17.827 INFO PduOffset line=varray:primitive:ranges:float32:164:4:8
+2024/10/21 22:55:17.827 INFO PduOffset line=varray:primitive:intensities:float32:172:4:8
+2024/10/21 22:55:17.827 INFO PduOffset key=sensor_msgs/LaserScan
+2024/10/21 22:55:17.827 INFO Parse filepath=./ros_types/offset/sensor_msgs/PointCloud2.offset
+2024/10/21 22:55:17.827 INFO PduOffset line=single:struct:header:std_msgs/Header:0:136
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:height:uint32:136:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:width:uint32:140:4
+2024/10/21 22:55:17.827 INFO PduOffset line=varray:struct:fields:PointField:144:140:8
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:is_bigendian:bool:152:4
+2024/10/21 22:55:17.827 INFO PduOffset line=single:primitive:point_step:uint32:156:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:row_step:uint32:160:4
+2024/10/21 22:55:17.828 INFO PduOffset line=varray:primitive:data:uint8:164:1:8
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:is_dense:bool:172:4
+2024/10/21 22:55:17.828 INFO PduOffset key=sensor_msgs/PointCloud2
+2024/10/21 22:55:17.828 INFO Parse filepath=./ros_types/offset/sensor_msgs/PointField.offset
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:name:string:0:128
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:offset:uint32:128:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:datatype:uint8:132:1
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:count:uint32:136:4
+2024/10/21 22:55:17.828 INFO PduOffset key=sensor_msgs/PointField
+2024/10/21 22:55:17.828 INFO Parse filepath=./ros_types/offset/sensor_msgs/RegionOfInterest.offset
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:x_offset:uint32:0:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:y_offset:uint32:4:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:height:uint32:8:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:width:uint32:12:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:do_rectify:bool:16:4
+2024/10/21 22:55:17.828 INFO PduOffset key=sensor_msgs/RegionOfInterest
+2024/10/21 22:55:17.828 INFO package_name=std_msgs
+2024/10/21 22:55:17.828 INFO tmp_dir=./ros_types/offset/std_msgs
+2024/10/21 22:55:17.828 INFO filepaths.Length=29
+2024/10/21 22:55:17.828 INFO Parse filepath=./ros_types/offset/std_msgs/Bool.offset
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:data:bool:0:4
+2024/10/21 22:55:17.828 INFO PduOffset key=std_msgs/Bool
+2024/10/21 22:55:17.828 INFO Parse filepath=./ros_types/offset/std_msgs/Byte.offset
+2024/10/21 22:55:17.828 INFO PduOffset line=single:struct:data:byte:0:1
+2024/10/21 22:55:17.828 INFO PduOffset key=std_msgs/Byte
+2024/10/21 22:55:17.828 INFO Parse filepath=./ros_types/offset/std_msgs/ByteMultiArray.offset
+2024/10/21 22:55:17.828 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.828 INFO PduOffset line=varray:struct:data:byte:12:1:8
+2024/10/21 22:55:17.828 INFO PduOffset key=std_msgs/ByteMultiArray
+2024/10/21 22:55:17.828 INFO Parse filepath=./ros_types/offset/std_msgs/Char.offset
+2024/10/21 22:55:17.828 INFO PduOffset line=single:struct:data:char:0:1
+2024/10/21 22:55:17.828 INFO PduOffset key=std_msgs/Char
+2024/10/21 22:55:17.828 INFO Parse filepath=./ros_types/offset/std_msgs/ColorRGBA.offset
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:r:float32:0:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:g:float32:4:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:b:float32:8:4
+2024/10/21 22:55:17.828 INFO PduOffset line=single:primitive:a:float32:12:4
+2024/10/21 22:55:17.828 INFO PduOffset key=std_msgs/ColorRGBA
+2024/10/21 22:55:17.828 INFO Parse filepath=./ros_types/offset/std_msgs/Float32.offset
+2024/10/21 22:55:17.830 INFO PduOffset line=single:primitive:data:float32:0:4
+2024/10/21 22:55:17.830 INFO PduOffset key=std_msgs/Float32
+2024/10/21 22:55:17.830 INFO Parse filepath=./ros_types/offset/std_msgs/Float32MultiArray.offset
+2024/10/21 22:55:17.830 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.830 INFO PduOffset line=varray:primitive:data:float32:12:4:8
+2024/10/21 22:55:17.830 INFO PduOffset key=std_msgs/Float32MultiArray
+2024/10/21 22:55:17.830 INFO Parse filepath=./ros_types/offset/std_msgs/Float64.offset
+2024/10/21 22:55:17.830 INFO PduOffset line=single:primitive:data:float64:0:8
+2024/10/21 22:55:17.830 INFO PduOffset key=std_msgs/Float64
+2024/10/21 22:55:17.830 INFO Parse filepath=./ros_types/offset/std_msgs/Float64MultiArray.offset
+2024/10/21 22:55:17.830 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.830 INFO PduOffset line=varray:primitive:data:float64:12:8:8
+2024/10/21 22:55:17.830 INFO PduOffset key=std_msgs/Float64MultiArray
+2024/10/21 22:55:17.830 INFO Parse filepath=./ros_types/offset/std_msgs/Header.offset
+2024/10/21 22:55:17.830 INFO PduOffset line=single:struct:stamp:builtin_interfaces/Time:0:8
+2024/10/21 22:55:17.830 INFO PduOffset line=single:primitive:frame_id:string:8:128
+2024/10/21 22:55:17.830 INFO PduOffset key=std_msgs/Header
+2024/10/21 22:55:17.830 INFO Parse filepath=./ros_types/offset/std_msgs/Int16.offset
+2024/10/21 22:55:17.830 INFO PduOffset line=single:primitive:data:int16:0:2
+2024/10/21 22:55:17.830 INFO PduOffset key=std_msgs/Int16
+2024/10/21 22:55:17.830 INFO Parse filepath=./ros_types/offset/std_msgs/Int16MultiArray.offset
+2024/10/21 22:55:17.831 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.831 INFO PduOffset line=varray:primitive:data:int16:12:2:8
+2024/10/21 22:55:17.831 INFO PduOffset key=std_msgs/Int16MultiArray
+2024/10/21 22:55:17.831 INFO Parse filepath=./ros_types/offset/std_msgs/Int32.offset
+2024/10/21 22:55:17.831 INFO PduOffset line=single:primitive:data:int32:0:4
+2024/10/21 22:55:17.831 INFO PduOffset key=std_msgs/Int32
+2024/10/21 22:55:17.831 INFO Parse filepath=./ros_types/offset/std_msgs/Int32MultiArray.offset
+2024/10/21 22:55:17.831 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.831 INFO PduOffset line=varray:primitive:data:int32:12:4:8
+2024/10/21 22:55:17.831 INFO PduOffset key=std_msgs/Int32MultiArray
+2024/10/21 22:55:17.831 INFO Parse filepath=./ros_types/offset/std_msgs/Int64.offset
+2024/10/21 22:55:17.831 INFO PduOffset line=single:primitive:data:int64:0:8
+2024/10/21 22:55:17.831 INFO PduOffset key=std_msgs/Int64
+2024/10/21 22:55:17.831 INFO Parse filepath=./ros_types/offset/std_msgs/Int64MultiArray.offset
+2024/10/21 22:55:17.831 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.831 INFO PduOffset line=varray:primitive:data:int64:12:8:8
+2024/10/21 22:55:17.831 INFO PduOffset key=std_msgs/Int64MultiArray
+2024/10/21 22:55:17.831 INFO Parse filepath=./ros_types/offset/std_msgs/Int8.offset
+2024/10/21 22:55:17.831 INFO PduOffset line=single:primitive:data:int8:0:1
+2024/10/21 22:55:17.831 INFO PduOffset key=std_msgs/Int8
+2024/10/21 22:55:17.832 INFO Parse filepath=./ros_types/offset/std_msgs/Int8MultiArray.offset
+2024/10/21 22:55:17.832 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.832 INFO PduOffset line=varray:primitive:data:int8:12:1:8
+2024/10/21 22:55:17.832 INFO PduOffset key=std_msgs/Int8MultiArray
+2024/10/21 22:55:17.832 INFO Parse filepath=./ros_types/offset/std_msgs/MultiArrayDimension.offset
+2024/10/21 22:55:17.832 INFO PduOffset line=single:primitive:label:string:0:128
+2024/10/21 22:55:17.832 INFO PduOffset line=single:primitive:size:uint32:128:4
+2024/10/21 22:55:17.832 INFO PduOffset line=single:primitive:stride:uint32:132:4
+2024/10/21 22:55:17.832 INFO PduOffset key=std_msgs/MultiArrayDimension
+2024/10/21 22:55:17.832 INFO Parse filepath=./ros_types/offset/std_msgs/MultiArrayLayout.offset
+2024/10/21 22:55:17.832 INFO PduOffset line=varray:struct:dim:MultiArrayDimension:0:136:8
+2024/10/21 22:55:17.832 INFO PduOffset line=single:primitive:data_offset:uint32:8:4
+2024/10/21 22:55:17.832 INFO PduOffset key=std_msgs/MultiArrayLayout
+2024/10/21 22:55:17.832 INFO Parse filepath=./ros_types/offset/std_msgs/String.offset
+2024/10/21 22:55:17.832 INFO PduOffset line=single:primitive:data:string:0:128
+2024/10/21 22:55:17.832 INFO PduOffset key=std_msgs/String
+2024/10/21 22:55:17.832 INFO Parse filepath=./ros_types/offset/std_msgs/UInt16.offset
+2024/10/21 22:55:17.832 INFO PduOffset line=single:primitive:data:uint16:0:2
+2024/10/21 22:55:17.832 INFO PduOffset key=std_msgs/UInt16
+2024/10/21 22:55:17.832 INFO Parse filepath=./ros_types/offset/std_msgs/UInt16MultiArray.offset
+2024/10/21 22:55:17.833 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.833 INFO PduOffset line=varray:primitive:data:uint16:12:2:8
+2024/10/21 22:55:17.833 INFO PduOffset key=std_msgs/UInt16MultiArray
+2024/10/21 22:55:17.833 INFO Parse filepath=./ros_types/offset/std_msgs/UInt32.offset
+2024/10/21 22:55:17.833 INFO PduOffset line=single:primitive:data:uint32:0:4
+2024/10/21 22:55:17.833 INFO PduOffset key=std_msgs/UInt32
+2024/10/21 22:55:17.833 INFO Parse filepath=./ros_types/offset/std_msgs/UInt32MultiArray.offset
+2024/10/21 22:55:17.833 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.833 INFO PduOffset line=varray:primitive:data:uint32:12:4:8
+2024/10/21 22:55:17.833 INFO PduOffset key=std_msgs/UInt32MultiArray
+2024/10/21 22:55:17.833 INFO Parse filepath=./ros_types/offset/std_msgs/UInt64.offset
+2024/10/21 22:55:17.833 INFO PduOffset line=single:primitive:data:uint64:0:8
+2024/10/21 22:55:17.833 INFO PduOffset key=std_msgs/UInt64
+2024/10/21 22:55:17.833 INFO Parse filepath=./ros_types/offset/std_msgs/UInt64MultiArray.offset
+2024/10/21 22:55:17.833 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.833 INFO PduOffset line=varray:primitive:data:uint64:12:8:8
+2024/10/21 22:55:17.833 INFO PduOffset key=std_msgs/UInt64MultiArray
+2024/10/21 22:55:17.833 INFO Parse filepath=./ros_types/offset/std_msgs/UInt8.offset
+2024/10/21 22:55:17.833 INFO PduOffset line=single:primitive:data:uint8:0:1
+2024/10/21 22:55:17.833 INFO PduOffset key=std_msgs/UInt8
+2024/10/21 22:55:17.833 INFO Parse filepath=./ros_types/offset/std_msgs/UInt8MultiArray.offset
+2024/10/21 22:55:17.834 INFO PduOffset line=single:struct:layout:MultiArrayLayout:0:12
+2024/10/21 22:55:17.834 INFO PduOffset line=varray:primitive:data:uint8:12:1:8
+2024/10/21 22:55:17.834 INFO PduOffset key=std_msgs/UInt8MultiArray
+2024/10/21 22:55:17.834 INFO package_name=tf2_msgs
+2024/10/21 22:55:17.834 INFO tmp_dir=./ros_types/offset/tf2_msgs
+2024/10/21 22:55:17.834 INFO filepaths.Length=1
+2024/10/21 22:55:17.834 INFO Parse filepath=./ros_types/offset/tf2_msgs/TFMessage.offset
+2024/10/21 22:55:17.834 INFO PduOffset line=varray:struct:transforms:geometry_msgs/TransformStamped:0:320:8
+2024/10/21 22:55:17.834 INFO PduOffset key=tf2_msgs/TFMessage

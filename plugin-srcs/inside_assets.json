@@ -1,5 +1,43 @@
 [
   {
+    "name": "RobotControllerTest",
+    "pdu_writer_names": [
+      "RobotControllerTest_cmd_velPdu"
+    ],
+    "pdu_reader_names": [],
+    "core_class_name": null
+  },
+  {
+    "name": "CameraTestDriver",
+    "pdu_writer_names": [],
+    "pdu_reader_names": [],
+    "core_class_name": null
+  },
+  {
+    "name": "Button",
+    "pdu_writer_names": [],
+    "pdu_reader_names": [
+      "Button_button_sensorPdu"
+    ],
+    "core_class_name": null
+  },
+  {
+    "name": "RobotController",
+    "pdu_writer_names": [
+      "RobotController_cmd_velPdu"
+    ],
+    "pdu_reader_names": [],
+    "core_class_name": null
+  },
+  {
+    "name": "CameraTransmiter",
+    "pdu_writer_names": [
+      "CameraTransmiter_pose_dataPdu"
+    ],
+    "pdu_reader_names": [],
+    "core_class_name": null
+  },
+  {
     "name": "SampleRobot",
     "pdu_writer_names": [
       "SampleRobot_touch_sensorPdu",
@@ -17,20 +55,6 @@
     "pdu_reader_names": [
       "Camera_pose_dataPdu"
     ],
-    "core_class_name": null
-  },
-  {
-    "name": "Button",
-    "pdu_writer_names": [],
-    "pdu_reader_names": [
-      "Button_button_sensorPdu"
-    ],
-    "core_class_name": null
-  },
-  {
-    "name": "SampleRobotController",
-    "pdu_writer_names": [],
-    "pdu_reader_names": [],
     "core_class_name": null
   }
 ]

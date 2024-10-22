@@ -1,16 +1,31 @@
 [
   {
     "name": "custom_writer_connector_0",
-    "pdu_name": "SampleRobot_touch_sensorPdu",
+    "pdu_name": "RobotControllerTest_cmd_velPdu",
     "method_name": null
   },
   {
     "name": "custom_writer_connector_1",
-    "pdu_name": "SampleRobot_camera_image_jpgPdu",
+    "pdu_name": "RobotController_cmd_velPdu",
     "method_name": null
   },
   {
     "name": "custom_writer_connector_2",
+    "pdu_name": "CameraTransmiter_pose_dataPdu",
+    "method_name": null
+  },
+  {
+    "name": "custom_writer_connector_3",
+    "pdu_name": "SampleRobot_touch_sensorPdu",
+    "method_name": null
+  },
+  {
+    "name": "custom_writer_connector_4",
+    "pdu_name": "SampleRobot_camera_image_jpgPdu",
+    "method_name": null
+  },
+  {
+    "name": "custom_writer_connector_5",
     "pdu_name": "SampleRobot_scanPdu",
     "method_name": null
   }

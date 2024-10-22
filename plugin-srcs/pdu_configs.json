@@ -1,5 +1,15 @@
 [
   {
+    "pdu_type_name": "geometry_msgs/Twist",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
+  },
+  {
+    "pdu_type_name": "Twist",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
+  },
+  {
     "pdu_type_name": "std_msgs/Bool",
     "fields": null,
     "pdu_data_field_path": "./ros_types/json/std_msgs/Bool.json"
@@ -8,6 +18,16 @@
     "pdu_type_name": "Bool",
     "fields": null,
     "pdu_data_field_path": "./ros_types/json/std_msgs/Bool.json"
+  },
+  {
+    "pdu_type_name": "geometry_msgs/Pose",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
+  },
+  {
+    "pdu_type_name": "Pose",
+    "fields": null,
+    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
   },
   {
     "pdu_type_name": "sensor_msgs/CompressedImage",
@@ -28,26 +48,6 @@
     "pdu_type_name": "LaserScan",
     "fields": null,
     "pdu_data_field_path": "./ros_types/json/sensor_msgs/LaserScan.json"
-  },
-  {
-    "pdu_type_name": "geometry_msgs/Twist",
-    "fields": null,
-    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
-  },
-  {
-    "pdu_type_name": "Twist",
-    "fields": null,
-    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Twist.json"
-  },
-  {
-    "pdu_type_name": "geometry_msgs/Pose",
-    "fields": null,
-    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
-  },
-  {
-    "pdu_type_name": "Pose",
-    "fields": null,
-    "pdu_data_field_path": "./ros_types/json/geometry_msgs/Pose.json"
   },
   {
     "pdu_type_name": "time",

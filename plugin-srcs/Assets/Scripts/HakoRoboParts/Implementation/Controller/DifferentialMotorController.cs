@@ -8,11 +8,6 @@ using UnityEngine;
 
 namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
 {
-    enum MotorType {
-        MotorType_Left = 0,
-        MotorType_Right,
-        MotorType_Num
-    }
     public class DifferentialMotorController : MonoBehaviour, IRobotPartsController, IRobotPartsConfig
     {
         private GameObject root;
@@ -94,22 +89,22 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             double target_velocity;
             double target_rotation_angle_rate;
 
-            target_velocity = this.pdu_reader.GetReadOps().Ref("linear").GetDataFloat64("x") * motorFowardForceScale;
-            target_rotation_angle_rate = this.pdu_reader.GetReadOps().Ref("angular").GetDataFloat64("z") * motorRotateForceScale;
+            //target_velocity = this.pdu_reader.GetReadOps().Ref("linear").GetDataFloat64("x") * motorFowardForceScale;
+            //target_rotation_angle_rate = this.pdu_reader.GetReadOps().Ref("angular").GetDataFloat64("z") * motorRotateForceScale;
 
             //Debug.Log("read target_velocity=" + this.pdu_reader.GetReadOps().Ref("linear").GetDataFloat64("x"));
             //Debug.Log("target_rotation_angle_rate=" + target_rotation_angle_rate);
             //Debug.Log("target_rotation_angle_rate=" + target_rotation_angle_rate);
 
-            if (this.motors[(int)MotorType.MotorType_Right] != null)
-            {
-                motors[(int)MotorType.MotorType_Right].SetTargetVelicty((float)(target_velocity + (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
-            }
-            if (this.motors[(int)MotorType.MotorType_Left] != null)
-            {
-                //Debug.Log("target_velocity=" + target_velocity);
-                motors[(int)MotorType.MotorType_Left].SetTargetVelicty((float)(target_velocity - (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
-            }
+            //if (this.motors[(int)MotorType.MotorType_Right] != null)
+            //{
+            //    motors[(int)MotorType.MotorType_Right].SetTargetVelicty((float)(target_velocity + (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
+            //}
+            //if (this.motors[(int)MotorType.MotorType_Left] != null)
+            //{
+            //    //Debug.Log("target_velocity=" + target_velocity);
+            //    motors[(int)MotorType.MotorType_Left].SetTargetVelicty((float)(target_velocity - (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
+            //}
         }
         public IoMethod io_method = IoMethod.RPC;
         public CommMethod comm_method = CommMethod.UDP;

@@ -1,4 +1,4 @@
-﻿using Hakoniwa.PluggableAsset.Assets.Robot.Parts;
+using Hakoniwa.PluggableAsset.Assets.Robot.Parts;
 using Hakoniwa.PluggableAsset.Communication.Connector;
 using Hakoniwa.PluggableAsset.Communication.Pdu;
 using System;
@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
 {
-    public class DifferentialMotorControllerTestDriver : MonoBehaviour, IRobotPartsController, IRobotPartsConfig
+    public class CameraPoseTestDriver : MonoBehaviour, IRobotPartsController, IRobotPartsConfig
     {
         private GameObject root;
         private string root_name;
@@ -16,8 +16,8 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
         private IPduReader pdu_reader;
 
         public int update_cycle = 10;
-        public string topic_name = "cmd_vel";
-        public string roboname = "SampleRobot";
+        public string topic_name = "pose_data";
+        public string roboname = "CameraTransmiter";
         private int count = 0;
 
         public RosTopicMessageConfig[] getRosConfig()
@@ -59,28 +59,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
         public double delta_angle = 0.1;
         private void Update()
         {
-            if (Input.GetKeyDown(KeyCode.UpArrow))
-            {
-                this.target_velocity += delta_vel;
-            }
-            if (Input.GetKeyDown(KeyCode.DownArrow))
-            {
-                this.target_velocity -= delta_vel;
-            }
-            if (Input.GetKeyDown(KeyCode.LeftArrow))
-            {
-                this.target_rotation_angle_rate += delta_angle;
-            }
-            if (Input.GetKeyDown(KeyCode.RightArrow))
-            {
-                this.target_rotation_angle_rate -= delta_angle;
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Debug.Log("Space key is pressed");
-                this.target_velocity = 0;
-                this.target_rotation_angle_rate = 0;
-            }
+
         }
 
         public double target_velocity;
@@ -93,10 +72,11 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
                 return;
             }
             this.count = 0;
-            //Debug.Log("target_velocity=" + target_velocity);
-            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            //this.pdu_reader.GetWriteOps().Ref("linear").SetData("x", target_velocity * DifferentialMotorController.motorFowardForceScale);
-            //this.pdu_reader.GetWriteOps().Ref("angular").SetData("z", target_rotation_angle_rate * DifferentialMotorController.motorRotateForceScale);
+            target_velocity = 10.0f;
+            target_rotation_angle_rate = 22.0f;
+            Debug.Log("Set Ref Postion " + target_velocity);
+            this.pdu_reader.GetReadOps().Ref("position").SetData("x", target_velocity);
+            this.pdu_reader.GetWriteOps().Ref("orientation").SetData("z", target_rotation_angle_rate);
         }
         public RoboPartsConfigData[] GetRoboPartsConfig()
         {

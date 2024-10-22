@@ -1,5 +1,32 @@
 [
   {
+    "name": "RobotControllerTest_cmd_velPdu",
+    "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter",
+    "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter",
+    "path": null,
+    "conv_path": null,
+    "pdu_config_name": "geometry_msgs/Twist",
+    "topic_message_name": null
+  },
+  {
+    "name": "RobotController_cmd_velPdu",
+    "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter",
+    "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter",
+    "path": null,
+    "conv_path": null,
+    "pdu_config_name": "geometry_msgs/Twist",
+    "topic_message_name": null
+  },
+  {
+    "name": "CameraTransmiter_pose_dataPdu",
+    "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter",
+    "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter",
+    "path": null,
+    "conv_path": null,
+    "pdu_config_name": "geometry_msgs/Pose",
+    "topic_message_name": null
+  },
+  {
     "name": "SampleRobot_touch_sensorPdu",
     "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriter",
     "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduWriterConverter",

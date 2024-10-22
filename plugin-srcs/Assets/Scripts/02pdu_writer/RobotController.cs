@@ -8,18 +8,18 @@ using UnityEngine;
 
 namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
 {
-    public class PositionAndRotationController : MonoBehaviour, IRobotPartsController, IRobotPartsConfig
+    public class RobotController : MonoBehaviour, IRobotPartsController, IRobotPartsConfig
     {
         private GameObject root;
         private string root_name;
         private IRobotPartsMotor [] motors = new IRobotPartsMotor[(int)MotorType.MotorType_Num];
         private PduIoConnector pdu_io;
         private IPduReader pdu_reader;
+        private IPduWriter pdu_writer;
         public float steering_sensitivity = 1.5f;                // ?o???l
 
-        public string topic_type = "geometry_msgs/Pose";
-        public string topic_name = "pose_data";
-        public string roboname = "Camera";
+        public string topic_type = "geometry_msgs/Twist";
+        public string topic_name = "cmd_vel";
         public int update_cycle = 10;
         public float motor_interval_distance = 0.160f; // 16cm
 
@@ -36,7 +36,6 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
         }
         public void Initialize(System.Object obj)
         {
-            Debug.Log("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
             GameObject tmp = null;
             try
             {
@@ -55,49 +54,20 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
                 this.pdu_io = PduIoConnector.Get(root_name);
                 if (this.pdu_io == null)
                 {
-                    throw new ArgumentException("can not found pdu_io:" + roboname);
+                    throw new ArgumentException("can not found pdu_io:" + root_name);
                 }
-                var pdu_reader_name = roboname + "_" + this.topic_name + "Pdu";
-                this.pdu_reader = this.pdu_io.GetReader(pdu_reader_name);
-                if (this.pdu_reader == null)
+                var pdu_writer_name = root_name + "_" + this.topic_name + "Pdu";
+                this.pdu_writer = this.pdu_io.GetWriter(pdu_writer_name);
+                if (this.pdu_writer == null)
                 {
-                    throw new ArgumentException("can not found pdu_reader:" + pdu_reader_name);
+                    throw new ArgumentException("can not found pdu_writer:" + pdu_writer_name);
                 }
-                //this.motors[(int)MotorType.MotorType_Left] = this.transform.Find("Interface-L").GetComponentInChildren<IRobotPartsMotor>();
-                //this.motors[(int)MotorType.MotorType_Right] = this.transform.Find("Interface-R").GetComponentInChildren<IRobotPartsMotor>();
-                //Debug.Log("motor left=" + this.motors[(int)MotorType.MotorType_Left]);
-                //Debug.Log("motor right=" + this.motors[(int)MotorType.MotorType_Right]);
             }
-            //for (int i = 0; i < this.motors.Length; i++)
-            //{
-            //    if (this.motors[i] != null)
-            //    {
-            //        this.motors[i].Initialize(root);
-            //    }
-            //}
             this.count = 0;
         }
-        //private void Update()
-        //{
-        //    Debug.Log("!!!!!!!!!!!!!!!!!");
-        //    DoControl();
-        //}
+
         public static float motorFowardForceScale = 1.0f;
         public static float motorRotateForceScale = 10.0f;
-        public GameObject gameObjectForRobot;
-        private void Update()
-        {
-            //gameObjectForRobot.transform.localPosition = new Vector3(1.0f, 1.0f, 10.0f);
-        }
-
-        public double position_x;
-        public double position_y;
-        public double position_z;
-
-        public double quaternion_x;
-        public double quaternion_y;
-        public double quaternion_z;
-        public double quaternion_w;
         public void DoControl()
         {
             this.count++;
@@ -106,19 +76,11 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
                 return;
             }
             this.count = 0;
+            double target_velocity = 99f;
+            double target_rotation_angle_rate = 998f;
 
-            Debug.Log(this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("x"));
-            Debug.Log(this.pdu_reader.GetReadOps().Ref("orientation").GetDataFloat64("z"));
-            // pdu position data
-            position_x = this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("x");
-            position_y = this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("y");
-            position_z = this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("z");
-
-            // pdu rotate data
-            quaternion_x = this.pdu_reader.GetReadOps().Ref("orientation").GetDataFloat64("x");
-            quaternion_y = this.pdu_reader.GetReadOps().Ref("orientation").GetDataFloat64("y");
-            quaternion_z = this.pdu_reader.GetReadOps().Ref("orientation").GetDataFloat64("z");
-            quaternion_w = this.pdu_reader.GetReadOps().Ref("orientation").GetDataFloat64("w");
+            this.pdu_writer.GetWriteOps().Ref("linear").SetData("x", target_velocity);
+            this.pdu_writer.GetWriteOps().Ref("angular").SetData("z", target_rotation_angle_rate);
         }
         public IoMethod io_method = IoMethod.RPC;
         public CommMethod comm_method = CommMethod.UDP;
@@ -126,7 +88,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
         {
             RoboPartsConfigData[] configs = new RoboPartsConfigData[1];
             configs[0] = new RoboPartsConfigData();
-            configs[0].io_dir = IoDir.READ;
+            configs[0].io_dir = IoDir.WRITE;
             configs[0].io_method = this.io_method;
             configs[0].value.org_name = this.topic_name;
             configs[0].value.type = this.topic_type;

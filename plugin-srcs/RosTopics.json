@@ -1,8 +1,40 @@
 {
-  "robot_num": 4,
+  "robot_num": 7,
   "ros_robot_num": 0,
   "hakoenv_num": 0,
   "fields": [
+    {
+      "topic_message_name": "RobotControllerTest_cmd_vel",
+      "topic_type_name": "geometry_msgs/Twist",
+      "robot_name": "RobotControllerTest",
+      "sub": true,
+      "pub_option": null
+    },
+    {
+      "topic_message_name": "Button_button_sensor",
+      "topic_type_name": "std_msgs/Bool",
+      "robot_name": "Button",
+      "sub": true,
+      "pub_option": null
+    },
+    {
+      "topic_message_name": "RobotController_cmd_vel",
+      "topic_type_name": "geometry_msgs/Twist",
+      "robot_name": "RobotController",
+      "sub": true,
+      "pub_option": null
+    },
+    {
+      "topic_message_name": "CameraTransmiter_pose_data",
+      "topic_type_name": "geometry_msgs/Pose",
+      "robot_name": "CameraTransmiter",
+      "sub": false,
+      "pub_option": {
+        "cycle_scale": 10,
+        "latch": false,
+        "queue_size": 1
+      }
+    },
     {
       "topic_message_name": "SampleRobot_touch_sensor",
       "topic_type_name": "std_msgs/Bool",
@@ -47,13 +79,6 @@
       "topic_message_name": "Camera_pose_data",
       "topic_type_name": "geometry_msgs/Pose",
       "robot_name": "Camera",
-      "sub": true,
-      "pub_option": null
-    },
-    {
-      "topic_message_name": "Button_button_sensor",
-      "topic_type_name": "std_msgs/Bool",
-      "robot_name": "Button",
       "sub": true,
       "pub_option": null
     }

@@ -1,11 +1,11 @@
 {
   "robos": [
     {
-      "roboname": "SampleRobot",
-      "robotype": "SampleRobot",
+      "roboname": "RobotControllerTest",
+      "robotype": "SampleRobotTestDriver",
       "pos": {
-        "X": 0.0,
-        "Y": 1.29,
+        "X": -7.5,
+        "Y": 0.7,
         "Z": -13.2
       },
       "angle": {
@@ -15,7 +15,7 @@
       }
     },
     {
-      "roboname": "Camera",
+      "roboname": "CameraTestDriver",
       "robotype": "CameraTestDriver",
       "pos": {
         "X": -7.5,
@@ -43,12 +43,54 @@
       }
     },
     {
-      "roboname": "SampleRobotController",
+      "roboname": "RobotController",
       "robotype": "SampleRobotTestDriver",
       "pos": {
         "X": -7.5,
         "Y": 0.7,
         "Z": -13.2
+      },
+      "angle": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    },
+    {
+      "roboname": "CameraTransmiter",
+      "robotype": "CameraTestDriver",
+      "pos": {
+        "X": -7.5,
+        "Y": 1.41,
+        "Z": 0.0
+      },
+      "angle": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    },
+    {
+      "roboname": "SampleRobot",
+      "robotype": "SampleRobot",
+      "pos": {
+        "X": 0.0,
+        "Y": 1.29,
+        "Z": -13.2
+      },
+      "angle": {
+        "X": 0.0,
+        "Y": 0.0,
+        "Z": 0.0
+      }
+    },
+    {
+      "roboname": "Camera",
+      "robotype": "CameraTestDriver",
+      "pos": {
+        "X": -7.5,
+        "Y": 1.41,
+        "Z": 0.0
       },
       "angle": {
         "X": 0.0,
