@@ -66,6 +66,8 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             this.count = 0;
         }
 
+        public double linear_x;
+        public double angular_z;
         public static float motorFowardForceScale = 1.0f;
         public static float motorRotateForceScale = 10.0f;
         public void DoControl()
@@ -79,8 +81,8 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             double target_velocity = 99f;
             double target_rotation_angle_rate = 998f;
 
-            this.pdu_writer.GetWriteOps().Ref("linear").SetData("x", target_velocity);
-            this.pdu_writer.GetWriteOps().Ref("angular").SetData("z", target_rotation_angle_rate);
+            this.pdu_writer.GetWriteOps().Ref("linear").SetData("x", linear_x);
+            this.pdu_writer.GetWriteOps().Ref("angular").SetData("z", angular_z);
         }
         public IoMethod io_method = IoMethod.RPC;
         public CommMethod comm_method = CommMethod.UDP;

@@ -60,8 +60,8 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.TestDriver
         public double delta_angle = 0.1;
         private void Update()
         {
-            robotRotateAndPostionSync();
-            RobotControllerNoObstacle();
+            //robotRotateAndPostionSync();
+            //RobotControllerNoObstacle();
             if (Input.GetKeyDown(KeyCode.UpArrow))
             {
                 this.target_velocity += delta_vel;

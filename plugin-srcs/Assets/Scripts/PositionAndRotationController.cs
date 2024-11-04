@@ -107,8 +107,8 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             }
             this.count = 0;
 
-            Debug.Log(this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("x"));
-            Debug.Log(this.pdu_reader.GetReadOps().Ref("orientation").GetDataFloat64("z"));
+            //Debug.Log(this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("x"));
+            //Debug.Log(this.pdu_reader.GetReadOps().Ref("orientation").GetDataFloat64("z"));
             // pdu position data
             position_x = this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("x");
             position_y = this.pdu_reader.GetReadOps().Ref("position").GetDataFloat64("y");

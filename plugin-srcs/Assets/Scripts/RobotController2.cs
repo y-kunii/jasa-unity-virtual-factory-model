@@ -61,7 +61,7 @@ public class RobotController2 : MonoBehaviour
         if (!isGoalState)
         {
             Debug.Log("! isGoalState");
-            this.transform.Rotate(0, angleSpeed, 0);
+            //this.transform.Rotate(0, angleSpeed, 0);
             for (int i = 0; i < hits.Length; i++)
             {
                     if (!isObstacleState)
@@ -98,7 +98,7 @@ public class RobotController2 : MonoBehaviour
                 {
                     if (hit.transform.name == obstaclePoint.name)
                     {
-                        this.transform.Rotate(0, angleSpeed, 0);
+                        //this.transform.Rotate(0, angleSpeed, 0);
                     }
                     //else
                     //{
@@ -108,7 +108,7 @@ public class RobotController2 : MonoBehaviour
                 }
                 else
                 {
-                    this.transform.Rotate(0, 0, 0);
+                    //this.transform.Rotate(0, 0, 0);
                     isGoalRestartState = true;
                 }
             }
@@ -134,7 +134,7 @@ public class RobotController2 : MonoBehaviour
         if (canMoveRobot)
         {
             Debug.Log("canMoveRobot");
-            this.transform.Rotate(0, 0, 0);
+            //this.transform.Rotate(0, 0, 0);
             MoveRobotFoward();
         }
         //if (Physics.Raycast(ray, out RaycastHit hits, Mathf.Infinity))

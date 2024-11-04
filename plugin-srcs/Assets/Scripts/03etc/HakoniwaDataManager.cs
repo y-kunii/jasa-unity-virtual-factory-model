@@ -21,8 +21,13 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
         public double CameraQuaternion_z;
         public double CameraQuaternion_w;
 
+        // pdu robot data
+        public double linear_x;
+        public double angular_z;
+
         // misc
         public PositionAndRotationController positionAndRotationController = new PositionAndRotationController();
+        public RobotController robotController = new RobotController();
 
         void Start()
         {
@@ -31,7 +36,6 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
 
         void Update()
         {
-            Debug.Log("QQQQQQQQQQQQQ " + positionAndRotationController.position_x);
             CameraPosition_x = positionAndRotationController.position_x;
             CameraPosition_y = positionAndRotationController.position_y;
             CameraPosition_z = positionAndRotationController.position_z;
@@ -40,6 +44,13 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             CameraQuaternion_y = positionAndRotationController.quaternion_y;
             CameraQuaternion_z = positionAndRotationController.quaternion_z;
             CameraQuaternion_w = positionAndRotationController.quaternion_w;
+
+            //linear_x = robotController.linear_x;
+            //angular_z = robotController.angular_z;
+
+            robotController.linear_x = linear_x;
+            robotController.angular_z = angular_z;
+
 
         }
 
