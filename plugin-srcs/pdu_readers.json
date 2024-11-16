@@ -1,6 +1,6 @@
 [
   {
-    "name": "Button_button_sensorPdu",
+    "name": "ButtonA_button_sensorPdu",
     "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
     "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter",
     "path": null,
@@ -9,12 +9,12 @@
     "topic_message_name": null
   },
   {
-    "name": "SampleRobot_cmd_velPdu",
+    "name": "ButtonB_button_sensorPdu",
     "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
     "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter",
     "path": null,
     "conv_path": null,
-    "pdu_config_name": "geometry_msgs/Twist",
+    "pdu_config_name": "std_msgs/Bool",
     "topic_message_name": null
   },
   {

@@ -81,7 +81,8 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             double target_velocity = 99f;
             double target_rotation_angle_rate = 998f;
 
-            this.pdu_writer.GetWriteOps().Ref("linear").SetData("x", linear_x);
+            //this.pdu_writer.GetWriteOps().Ref("linear").SetData("x", linear_x);
+            this.pdu_writer.GetWriteOps().Ref("linear").SetData("x", 0.1f);
             this.pdu_writer.GetWriteOps().Ref("angular").SetData("z", angular_z);
         }
         public IoMethod io_method = IoMethod.RPC;

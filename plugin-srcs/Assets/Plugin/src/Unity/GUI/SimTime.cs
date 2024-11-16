@@ -23,6 +23,7 @@ namespace Hakoniwa.GUI
         // Update is called once per frame
         void Update()
         {
+            Debug.Log(this.root.name);
             ISimulationController simulator = WorldController.Get();
             long simtime = simulator.GetWorldTime();
             double t = ((double)simtime) / 1000000.0f;

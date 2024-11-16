@@ -49,6 +49,7 @@ namespace Hakoniwa.Core
         private void InitHakoniwa()
         {
             this.root = GameObject.Find("Robot");
+            Debug.Log("!!!!!!!!!!!!!!! " + this.root.name);
 #if UNITY_EDITOR
             string filePath = Directory.GetCurrentDirectory();
 #else
@@ -62,6 +63,7 @@ namespace Hakoniwa.Core
                 Debug.Log("cpp_mode:" + AssetConfigLoader.core_config.cpp_mode);
                 Debug.Log("cpp_asset_name:" + AssetConfigLoader.core_config.cpp_asset_name);
                 isim = SimulationControllerFactory.Get(AssetConfigLoader.core_config.cpp_asset_name);
+                Debug.Log("isim " + isim);
             }
             else {
 #if NO_USE_GRPC
@@ -76,7 +78,7 @@ namespace Hakoniwa.Core
 #endif
             }
             Debug.Log("HakoniwaCore START");
-
+            Debug.Log("isim " + isim);
             iasset = isim.GetAssetManager();
             isim.RegisterEnvironmentOperation(new UnityEnvironmentOperation());
 

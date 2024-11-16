@@ -1,35 +1,7 @@
 {
   "robos": [
     {
-      "roboname": "RobotControllerTest",
-      "robotype": "SampleRobotTestDriver",
-      "pos": {
-        "X": -7.5,
-        "Y": 0.7,
-        "Z": -13.2
-      },
-      "angle": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0
-      }
-    },
-    {
-      "roboname": "CameraTestDriver",
-      "robotype": "CameraTestDriver",
-      "pos": {
-        "X": -7.5,
-        "Y": 1.41,
-        "Z": 0.0
-      },
-      "angle": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0
-      }
-    },
-    {
-      "roboname": "Button",
+      "roboname": "ButtonA",
       "robotype": "TouchSensorTestDriver",
       "pos": {
         "X": -7.5,
@@ -43,7 +15,7 @@
       }
     },
     {
-      "roboname": "RobotController",
+      "roboname": "SampleRobot",
       "robotype": "SampleRobotTestDriver",
       "pos": {
         "X": -7.5,
@@ -57,25 +29,11 @@
       }
     },
     {
-      "roboname": "CameraTransmiter",
-      "robotype": "CameraTestDriver",
+      "roboname": "ButtonB",
+      "robotype": "TouchSensorTestDriver",
       "pos": {
         "X": -7.5,
-        "Y": 1.41,
-        "Z": 0.0
-      },
-      "angle": {
-        "X": 0.0,
-        "Y": 0.0,
-        "Z": 0.0
-      }
-    },
-    {
-      "roboname": "SampleRobot",
-      "robotype": "SampleRobot",
-      "pos": {
-        "X": 0.0,
-        "Y": 1.29,
+        "Y": 0.7,
         "Z": -13.2
       },
       "angle": {

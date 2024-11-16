@@ -76,8 +76,6 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             this.count = 0;
         }
 
-        public static float motorFowardForceScale = 1.0f;
-        public static float motorRotateForceScale = 10.0f;
         public void DoControl()
         {
             this.count++;
@@ -86,25 +84,8 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
                 return;
             }
             this.count = 0;
-            double target_velocity;
-            double target_rotation_angle_rate;
 
-            target_velocity = this.pdu_reader.GetReadOps().Ref("linear").GetDataFloat64("x") * motorFowardForceScale;
-            target_rotation_angle_rate = this.pdu_reader.GetReadOps().Ref("angular").GetDataFloat64("z") * motorRotateForceScale;
-
-            //Debug.Log("read target_velocity=" + this.pdu_reader.GetReadOps().Ref("linear").GetDataFloat64("x"));
-            //Debug.Log("target_rotation_angle_rate=" + target_rotation_angle_rate);
-            //Debug.Log("target_rotation_angle_rate=" + target_rotation_angle_rate);
-
-            if (this.motors[(int)MotorType.MotorType_Right] != null)
-            {
-                motors[(int)MotorType.MotorType_Right].SetTargetVelicty((float)(target_velocity + (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
-            }
-            if (this.motors[(int)MotorType.MotorType_Left] != null)
-            {
-                //Debug.Log("target_velocity=" + target_velocity);
-                motors[(int)MotorType.MotorType_Left].SetTargetVelicty((float)(target_velocity - (steering_sensitivity * target_rotation_angle_rate * motor_interval_distance / 2)));
-            }
+            Debug.Log(this.pdu_reader.GetReadOps().GetDataBool("request"));
         }
         public IoMethod io_method = IoMethod.RPC;
         public CommMethod comm_method = CommMethod.UDP;

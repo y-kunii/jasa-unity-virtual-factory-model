@@ -5,6 +5,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Hakoniwa.GUI;
 
 namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
 {
@@ -29,9 +30,11 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
         public PositionAndRotationController positionAndRotationController = new PositionAndRotationController();
         public RobotController robotController = new RobotController();
 
+        public SimStart simStart = new SimStart();
+
         void Start()
         {
-            
+            //simStart.OnButtonClick();
         }
 
         void Update()

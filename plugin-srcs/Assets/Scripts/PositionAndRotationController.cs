@@ -132,7 +132,8 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             configs[0].value.type = this.topic_type;
             configs[0].value.class_name = ConstantValues.pdu_reader_class;
             configs[0].value.conv_class_name = ConstantValues.conv_pdu_reader_class;
-            configs[0].value.pdu_size = ConstantValues.Twist_pdu_size;
+            configs[0].value.pdu_size = ConstantValues.Pose_pdu_size;
+            //configs[0].value.pdu_size = 80;
             configs[0].value.write_cycle = this.update_cycle;
             configs[0].value.method_type = this.comm_method.ToString();
             return configs;

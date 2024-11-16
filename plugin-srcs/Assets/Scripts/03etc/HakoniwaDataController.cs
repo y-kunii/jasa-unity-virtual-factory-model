@@ -40,10 +40,11 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
         // Update is called once per frame
         void Update()
         {
-            robot.transform.position = new Vector3((float)(hakoniwaDataManager.CameraPosition_x) ,(float)(hakoniwaDataManager.CameraPosition_y), (float)(hakoniwaDataManager.CameraPosition_z));
+            //robot.transform.position = new Vector3((float)(hakoniwaDataManager.CameraPosition_x) ,(float)(hakoniwaDataManager.CameraPosition_y), (float)(hakoniwaDataManager.CameraPosition_z));
+            robot.transform.localPosition = new Vector3((float)(hakoniwaDataManager.CameraPosition_x) , 0, (float)(hakoniwaDataManager.CameraPosition_z));
             //robot.transform.localPosition = new Vector3((float)(hakoniwaDataManager.CameraPosition_x) ,(float)(robot.transform.position.y), (float)(hakoniwaDataManager.CameraPosition_z));
             //robot.transform.Rotate(new Vector3((float)hakoniwaDataManager.CameraQuaternion_x, (float)hakoniwaDataManager.CameraQuaternion_y, (float)hakoniwaDataManager.CameraQuaternion_z));
-            robot.transform.rotation = Quaternion.Euler( (float)hakoniwaDataManager.CameraQuaternion_x, (float)hakoniwaDataManager.CameraQuaternion_y, (float)hakoniwaDataManager.CameraQuaternion_z);
+            robot.transform.localRotation = Quaternion.Euler( (float)hakoniwaDataManager.CameraQuaternion_x, (float)hakoniwaDataManager.CameraQuaternion_y, (float)hakoniwaDataManager.CameraQuaternion_z);
             //robotRotateAndPostionSync();
             RobotControllerNoObstacle();
         }

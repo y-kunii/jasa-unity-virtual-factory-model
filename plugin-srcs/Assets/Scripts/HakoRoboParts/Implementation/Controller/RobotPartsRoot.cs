@@ -46,7 +46,9 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts.Class.Controller
         public void Initialize()
         {
             this.root = GameObject.Find("Robot");
+            Debug.Log("!!!!! " + this.transform.name);
             this.myObject = GameObject.Find("Robot/" + this.transform.name);
+            Debug.Log(this.myObject.name);
             this.root_name = string.Copy(this.myObject.transform.name);
             this.controllers = this.myObject.GetComponentsInChildren<IRobotPartsController>();
             /*
