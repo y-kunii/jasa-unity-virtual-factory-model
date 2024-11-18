@@ -99,6 +99,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
         public static readonly uint PduMetaDataMagicNo = 0x12345678;
         public static readonly int PduMetaDataSize = 24;
         public static readonly int Twist_pdu_size = 48 + PduMetaDataSize;
+        public static readonly int Pose_pdu_size = 56 + PduMetaDataSize;
         public static readonly int JointState_pdu_size = 440 + PduMetaDataSize;
         public static readonly int Imu_pdu_size = 432 + PduMetaDataSize;
         public static readonly int Odometry_pdu_size = 944 + PduMetaDataSize;

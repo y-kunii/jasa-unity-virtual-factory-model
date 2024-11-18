@@ -55,7 +55,7 @@ namespace Hakoniwa.Core
 #else
             string filePath = AppDomain.CurrentDomain.BaseDirectory;
 #endif
-            Debug.Log(filePath);
+            //Debug.Log(filePath);
             //string configPath = filePath + System.IO.Path.DirectorySeparatorChar + "core_config.json";
             string configPath = "./core_config.json";
             AssetConfigLoader.Load(configPath);
