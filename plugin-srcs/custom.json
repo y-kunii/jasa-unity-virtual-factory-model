@@ -1,6 +1,25 @@
 {
   "robots": [
     {
+      "name": "Camera",
+      "rpc_pdu_readers": [],
+      "rpc_pdu_writers": [],
+      "shm_pdu_readers": [
+        {
+          "type": "geometry_msgs/Pose",
+          "org_name": "pose_data",
+          "name": "Camera_pose_data",
+          "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
+          "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter",
+          "channel_id": 0,
+          "pdu_size": 80,
+          "write_cycle": 10,
+          "method_type": "SHM"
+        }
+      ],
+      "shm_pdu_writers": []
+    },
+    {
       "name": "ButtonA",
       "rpc_pdu_readers": [],
       "rpc_pdu_writers": [],
@@ -56,25 +75,6 @@
           "method_type": "SHM"
         }
       ]
-    },
-    {
-      "name": "Camera",
-      "rpc_pdu_readers": [],
-      "rpc_pdu_writers": [],
-      "shm_pdu_readers": [
-        {
-          "type": "geometry_msgs/Pose",
-          "org_name": "pose_data",
-          "name": "Camera_pose_data",
-          "class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReader",
-          "conv_class_name": "Hakoniwa.PluggableAsset.Communication.Pdu.Raw.RawPduReaderConverter",
-          "channel_id": 0,
-          "pdu_size": 80,
-          "write_cycle": 10,
-          "method_type": "SHM"
-        }
-      ],
-      "shm_pdu_writers": []
     }
   ]
 }

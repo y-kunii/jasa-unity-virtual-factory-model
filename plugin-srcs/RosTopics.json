@@ -4,6 +4,13 @@
   "hakoenv_num": 0,
   "fields": [
     {
+      "topic_message_name": "Camera_pose_data",
+      "topic_type_name": "geometry_msgs/Pose",
+      "robot_name": "Camera",
+      "sub": true,
+      "pub_option": null
+    },
+    {
       "topic_message_name": "ButtonA_button_sensor",
       "topic_type_name": "std_msgs/Bool",
       "robot_name": "ButtonA",
@@ -22,13 +29,6 @@
       "topic_type_name": "geometry_msgs/Twist",
       "robot_name": "SampleRobot",
       "sub": false,
-      "pub_option": null
-    },
-    {
-      "topic_message_name": "Camera_pose_data",
-      "topic_type_name": "geometry_msgs/Pose",
-      "robot_name": "Camera",
-      "sub": true,
       "pub_option": null
     }
   ]

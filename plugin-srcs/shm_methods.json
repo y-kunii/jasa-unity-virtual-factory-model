@@ -1,5 +1,12 @@
 [
   {
+    "method_name": "CameraShmReader0",
+    "asset_name": "Camera",
+    "channel_id": 0,
+    "iosize": 80,
+    "is_read": true
+  },
+  {
     "method_name": "ButtonAShmReader0",
     "asset_name": "ButtonA",
     "channel_id": 0,
@@ -19,12 +26,5 @@
     "channel_id": 0,
     "iosize": 72,
     "is_read": false
-  },
-  {
-    "method_name": "CameraShmReader0",
-    "asset_name": "Camera",
-    "channel_id": 0,
-    "iosize": 80,
-    "is_read": true
   }
 ]

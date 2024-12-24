@@ -98,6 +98,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             this.count = 0;
 
             Debug.Log("GetDataBool(data) " + this.pdu_reader.GetReadOps().GetDataBool("data"));
+            button_flag = this.pdu_reader.GetReadOps().GetDataBool("data");
         }
         public IoMethod io_method = IoMethod.RPC;
         public CommMethod comm_method = CommMethod.UDP;

@@ -19,7 +19,6 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
 
         // misc
         private int goalListCount = 0;
-        private bool isObstacleState = false;
         private Transform goalPoint;
         public List<Transform> goalList;
         private Vector3 heading;
@@ -42,22 +41,67 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
         void Update()
         {
             //robot.transform.position = new Vector3((float)(hakoniwaDataManager.CameraPosition_x) ,(float)(hakoniwaDataManager.CameraPosition_y), (float)(hakoniwaDataManager.CameraPosition_z));
-            robot.transform.localPosition = new Vector3((float)(hakoniwaDataManager.CameraPosition_x) , 0, (float)(hakoniwaDataManager.CameraPosition_z));
+            robot.transform.localPosition = new Vector3((float)(hakoniwaDataManager.CameraPosition_x) , 0.0f, (float)(hakoniwaDataManager.CameraPosition_z));
             //robot.transform.localPosition = new Vector3((float)(hakoniwaDataManager.CameraPosition_x) ,(float)(robot.transform.position.y), (float)(hakoniwaDataManager.CameraPosition_z));
             //robot.transform.Rotate(new Vector3((float)hakoniwaDataManager.CameraQuaternion_x, (float)hakoniwaDataManager.CameraQuaternion_y, (float)hakoniwaDataManager.CameraQuaternion_z));
-            robot.transform.localRotation = Quaternion.Euler( (float)hakoniwaDataManager.CameraQuaternion_x, (float)hakoniwaDataManager.CameraQuaternion_y, (float)hakoniwaDataManager.CameraQuaternion_z);
+            robot.transform.localRotation = Quaternion.Euler( (float)hakoniwaDataManager.CameraQuaternion_x, (float)hakoniwaDataManager.CameraQuaternion_y + 90.0f, (float)hakoniwaDataManager.CameraQuaternion_z);
             //robotRotateAndPostionSync();
+
             if (hakoniwaDataManager.buttonA_flag)
             {
-                goalPoint = goalList[0];
-                heading = goalPoint.position - this.transform.position;
-                
-                if (count_i < 1)
-                {
-                    rotateIsOn = true;
-                    count_i++;
-                }
+                hakoniwaDataManager.linear_x = -0.06f;
             }
+            if (hakoniwaDataManager.buttonB_flag)
+            {
+                hakoniwaDataManager.linear_x = 0.06f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                hakoniwaDataManager.angular_z = 0.1f;
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                hakoniwaDataManager.angular_z = -0.1f;
+            }
+            if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                hakoniwaDataManager.linear_x = 0.06f;
+            }
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                hakoniwaDataManager.linear_x = -0.06f;
+            }
+
+            if (Input.GetKeyDown(KeyCode.Space))
+            {
+                hakoniwaDataManager.linear_x = 0.00f;
+                hakoniwaDataManager.angular_z = 0.0f;
+            }
+
+            //if (hakoniwaDataManager.buttonA_flag)
+            //{
+            //    goalPoint = goalList[0];
+            //    heading = goalPoint.position - this.transform.position;
+            //    
+            //    if (count_i < 1)
+            //    {
+            //        rotateIsOn = true;
+            //        count_i++;
+            //    }
+            //}
+            //if (hakoniwaDataManager.buttonB_flag)
+            //{
+            //    goalPoint = goalList[1];
+            //    heading = goalPoint.position - this.transform.position;
+            //    
+            //    if (count_i < 1)
+            //    {
+            //        rotateIsOn = true;
+            //        count_i++;
+            //    }
+            //}
+
             if (goalPoint != null)
             {
                 RobotControllerNoObstacle();
@@ -97,7 +141,7 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             {
                 //this.transform.Rotate(0, 0, 0);
                 hakoniwaDataManager.angular_z = 0.0f;
-                hakoniwaDataManager.linear_x = 0.1f;
+                hakoniwaDataManager.linear_x = 0.06f;
                 //this.target_velocity = 0;
                 //this.target_rotation_angle_rate = 0;
                 runningIsOn = true;
@@ -142,21 +186,22 @@ namespace Hakoniwa.PluggableAsset.Assets.Robot.Parts
             //Debug.Log(Mathf.Abs(dis));
             if (Mathf.Abs(dis) < 0.06f)
             {
-                Debug.Log("GOAL OKKKKK");
+                Debug.Log("GOAL OK");
                 hakoniwaDataManager.linear_x = 0.0f;
-                if (goalList.Count > goalListCount)
-                {
-                    goalListCount++;
-                    goalPoint = goalList[goalListCount];
-                    heading = goalPoint.position - robotCamera.transform.position;
-                }
-                else
-                {
-                    goalPoint = null;
-                }
+                count_i = 0;
+                //if (goalList.Count > goalListCount)
+                //{
+                //    goalListCount++;
+                //    goalPoint = goalList[goalListCount];
+                //    heading = goalPoint.position - robotCamera.transform.position;
+                //}
+                //else
+                //{
+                //    goalPoint = null;
+                //}
+                goalPoint = null;
                 canMoveRobot = false;
-                rotateIsOn = true;
-                isObstacleState = false;
+                //rotateIsOn = true;
             }
         }
     }

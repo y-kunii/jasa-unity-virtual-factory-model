@@ -1,5 +1,13 @@
 [
   {
+    "name": "Camera",
+    "pdu_writer_names": [],
+    "pdu_reader_names": [
+      "Camera_pose_dataPdu"
+    ],
+    "core_class_name": null
+  },
+  {
     "name": "ButtonA",
     "pdu_writer_names": [],
     "pdu_reader_names": [
@@ -21,14 +29,6 @@
       "SampleRobot_cmd_velPdu"
     ],
     "pdu_reader_names": [],
-    "core_class_name": null
-  },
-  {
-    "name": "Camera",
-    "pdu_writer_names": [],
-    "pdu_reader_names": [
-      "Camera_pose_dataPdu"
-    ],
     "core_class_name": null
   }
 ]
